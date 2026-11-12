@@ -1,0 +1,80 @@
+/* 플레이어 머리줄 하나(player_header.php) — 노노그램 Touch·Pad, 컬러, 3D, 스도쿠가 같이 쓴다(2026-10-29 완성도 F2).
+ * 화면 CSS 의 옛 header·.icon-btn 규칙과 안 겹치게 .ph-* 만 쓴다. 다크는 html.dark-mode(컬러·3D·스도쿠)와 body.dark-mode(Touch·Pad) 둘 다.
+ * 좁은 화면 경계 600px 는 Touch 의 wide-only 와 같다. */
+.ph {
+	display: flex; align-items: center; justify-content: flex-start; gap: 2px;
+	height: 56px; padding: 0 8px; flex: none; box-sizing: border-box; width: 100%;
+	background: #fff; border-bottom: 1px solid #dee2e6; color: #212529;
+	position: relative; z-index: 100;
+}
+.ph *, .ph *::before, .ph *::after { box-sizing: border-box; }
+.ph-btn {
+	flex: none; width: 40px; height: 40px; padding: 0; margin: 0;
+	border: 0; border-radius: 8px; background: none; color: #495057; font-size: 17px;
+	display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.ph-btn:hover { background: #f1f3f5; }
+.ph-btn:active { background: #e9ecef; }
+.ph-btn:disabled { opacity: .35; cursor: default; background: none; }
+.ph-btn:focus-visible, .ph-submit:focus-visible { outline: 3px solid rgba(13,110,253,.45); outline-offset: 1px; }
+.ph-back { color: #212529; font-size: 19px; }
+.ph-tt { display: flex; flex-direction: column; justify-content: center; flex: 1; min-width: 0; margin-left: 2px; line-height: 1.25; }
+.ph-title { font-weight: 700; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: inherit; }
+.ph-meta { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #868e96; white-space: nowrap; overflow: hidden; }
+.ph-meta:empty { display: none; }
+.ph-badge { font-size: 11px; font-weight: 700; padding: 0 6px; border-radius: 5px; line-height: 17px; background: #e7f1ff; color: #0d6efd; }
+.ph-badge:empty { display: none; }
+.ph-time { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.ph-sep { flex: none; width: 1px; height: 20px; background: #dee2e6; margin: 0 4px; }
+.ph-submit {
+	flex: none; height: 38px; padding: 0 14px; margin-left: 6px;
+	border: 0; border-radius: 8px; background: #2c3e50; color: #fff;
+	font: inherit; font-weight: 700; font-size: 15px; line-height: 1; white-space: nowrap;
+	display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+}
+.ph-submit:active { transform: scale(.97); }
+/* 다 풀었을 때 제출 강조 — 게임 JS 가 ready 를 붙인다 */
+.ph-submit.ready { background: #27ae60; animation: phSubmitPulse 1.4s ease-in-out infinite; }
+@keyframes phSubmitPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(39,174,96,.55); } 50% { box-shadow: 0 0 0 9px rgba(39,174,96,0); } }
+.ph-narrow, .ph-narrow-i { display: none !important; }
+.ph-more { position: relative; flex: none; }
+.ph-menu {
+	position: absolute; right: 0; top: 46px; min-width: 180px; z-index: 300;
+	background: #fff; border: 1px solid #dee2e6; border-radius: 10px; padding: 6px 0;
+	box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+.ph-menu[hidden] { display: none; }
+.ph-menu button {
+	display: flex; align-items: center; gap: 12px; width: 100%; min-height: 44px; padding: 0 16px;
+	border: 0; background: none; font: inherit; font-size: 15px; color: #212529; text-align: left; cursor: pointer;
+}
+.ph-menu button i { width: 18px; text-align: center; color: #495057; }
+.ph-menu button:hover, .ph-menu button:focus-visible { background: #f1f3f5; outline: none; }
+
+@media (max-width: 600px) {
+	.ph { padding: 0 4px; }
+	.ph-wide, .ph-wide-i { display: none !important; }
+	.ph-narrow { display: inline-flex !important; }
+	.ph-narrow-i { display: inline-block !important; }
+	.ph-submit { padding: 0 12px; margin-left: 4px; }
+	.ph-sep { margin: 0 2px; }
+}
+@media (max-width: 359px) {
+	.ph-btn { width: 36px; }
+	.ph-submit { padding: 0 10px; font-size: 14px; }
+}
+
+html.dark-mode .ph, body.dark-mode .ph { background: #22262e; border-color: #3a3f48; color: #ddd; }
+html.dark-mode .ph-btn, body.dark-mode .ph-btn { color: #bbb; }
+html.dark-mode .ph-back, body.dark-mode .ph-back { color: #ddd; }
+html.dark-mode .ph-btn:hover, body.dark-mode .ph-btn:hover { background: rgba(255,255,255,.08); }
+html.dark-mode .ph-btn:disabled, body.dark-mode .ph-btn:disabled { background: none; }
+html.dark-mode .ph-meta, body.dark-mode .ph-meta { color: #999; }
+html.dark-mode .ph-sep, body.dark-mode .ph-sep { background: #3a3f48; }
+html.dark-mode .ph-submit, body.dark-mode .ph-submit { background: #4a6a7a; }
+html.dark-mode .ph-submit.ready, body.dark-mode .ph-submit.ready { background: #27ae60; }
+html.dark-mode .ph-badge, body.dark-mode .ph-badge { background: rgba(110,168,254,.15); color: #6ea8fe; }
+html.dark-mode .ph-menu, body.dark-mode .ph-menu { background: #22262e; border-color: #3a3f48; box-shadow: 0 6px 20px rgba(0,0,0,.45); }
+html.dark-mode .ph-menu button, body.dark-mode .ph-menu button { color: #ddd; }
+html.dark-mode .ph-menu button i, body.dark-mode .ph-menu button i { color: #bbb; }
+html.dark-mode .ph-menu button:hover, body.dark-mode .ph-menu button:hover { background: rgba(255,255,255,.08); }

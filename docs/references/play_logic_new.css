@@ -1,0 +1,465 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --base-cell-size: 26px;
+    --cell-size: 26px;
+    /* 칠 색은 중간 밝기 — 얇은 밝은 선과 5칸 진한 선이 둘 다 칠한 칸 위로 보인다(레거시와 같은 원리).
+       #2c3e50 에선 선이 안 보였고, 흰 틈을 두면 칠한 곳만 선이 3px 라 타일처럼 쪼개져 보였다 */
+    --filled-color: #4d5f71;
+    --reveal-fill: #2c3e50; /* 정답 연출 그림 색은 그대로 (playReveal) */
+    --x-color: #e74c3c;
+    --preview-fill: rgba(77, 95, 113, 0.6);
+    --preview-cross: rgba(231, 76, 60, 0.6);
+    --preview-erase: rgba(255, 0, 0, 0.2);
+    --hint-bg: #f8f9fa;
+    --hint-done-bg: #d1d5db;
+    --border-light: #c2c6cc;
+    --border-heavy: #222222;
+    --toolbar-height: 48px;
+    --memo-color: #f08c00;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0; padding: 0;
+    background-color: #f0f2f5;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    user-select: none; -webkit-user-select: none;
+    /* iOS/iPadOS 는 길게 누르면 선택 메뉴(콜아웃)를 띄워 느린 드래그를 끊는다 */
+    -webkit-touch-callout: none;
+    overscroll-behavior: none;
+}
+
+header {
+    background: white; padding: 0 12px; height: 45px; flex-shrink: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid #ddd; z-index: 100;
+}
+
+.header-left {
+    display: flex; align-items: center; gap: 8px;
+    overflow: hidden; flex: 1; min-width: 0; margin-right: 8px;
+}
+.title {
+    font-weight: bold; font-size: 1rem; color: #333;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex: 1;
+}
+
+.game-timer {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #888;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.btn-group { display: flex; gap: 4px; flex-shrink: 0; }
+
+.icon-btn {
+    width: 32px; height: 32px; border: 1px solid #ddd; background: white;
+    border-radius: 4px; font-size: 1.1rem; cursor: pointer;
+    display: flex; justify-content: center; align-items: center;
+    padding: 0; flex-shrink: 0; margin-left: 2px;
+}
+.icon-btn:disabled { opacity: 0.3; }
+
+.chk-btn {
+    background: #2c3e50; color: white; border: none; padding: 0 12px;
+    height: 32px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; cursor: pointer;
+    white-space: nowrap; flex-shrink: 0; margin-left: 4px;
+}
+/* 다 풀었을 때 제출 버튼 강조 (패드 방식과 같다) */
+.chk-btn.ready,
+body.dark-mode .chk-btn.ready { background: #27ae60; animation: submitPulse 1.4s ease-in-out infinite; }
+@keyframes submitPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(39,174,96,0.55); }
+    50%      { box-shadow: 0 0 0 9px rgba(39,174,96,0); }
+}
+
+.settings-panel {
+    display: none;
+    position: absolute;
+    top: 45px; right: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 200;
+    font-size: 0.85rem;
+}
+.settings-panel.show { display: block; }
+/* 머리줄 부품(.ph, 56px) 아래에 — 마인드캐치는 옛 머리줄(45px)이라 그대로 */
+.ph ~ .settings-panel { top: 58px; }
+.settings-item {
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 0; cursor: pointer; white-space: nowrap;
+}
+.settings-item input[type="checkbox"] {
+    width: 16px; height: 16px; cursor: pointer;
+}
+.settings-action {
+    display: block; width: 100%; padding: 6px 0; border: 0; background: none;
+    font: inherit; color: inherit; text-align: left; cursor: pointer; white-space: nowrap;
+}
+.settings-action > i { width: 18px; margin-right: 6px; text-align: center; color: #888; }	/* 기능 아이콘은 FA(2026-10-29 아이콘 기준) */
+.settings-tutorial { border-top: 1px solid #eee; margin-top: 4px; padding-top: 8px; }
+
+/* 좁은 화면(폰) — 헤더엔 되돌리기·설정·제출만 남긴다(패드 방식과 같은 구성).
+   처음부터·저장·불러오기는 ⚙️ 패널로, 확대·축소는 아래 도구바로 옮긴다. 아이콘 8개가 다 있으면
+   560px 아래에서 제목이 사라지고 360px 에선 제출 버튼이 잘렸다 */
+.narrow-only, .settings-menu { display: none !important; }
+@media (max-width: 600px) {
+    .wide-only { display: none !important; }
+    .narrow-only { display: flex !important; }
+    .settings-menu { display: block !important; border-bottom: 1px solid #eee; margin-bottom: 4px; padding-bottom: 4px; }
+    /* 여백을 줄여 제목 자리를 넓힌다 */
+    header { padding: 0 8px; }
+    .btn-group { gap: 2px; }
+    .icon-btn { margin-left: 0; }
+    .game-timer { margin-left: 4px; }
+}
+
+.game-viewport {
+    flex: 1; overflow: auto; position: relative; background: #e9ecef;
+    touch-action: pan-x pan-y; cursor: grab; display: flex;
+    -webkit-overflow-scrolling: touch;
+}
+.game-viewport.locked { touch-action: none; cursor: crosshair; }
+
+.game-board {
+    display: grid; background: white; margin: auto;
+    border-top: 1px solid var(--border-light);
+    border-left: 1px solid var(--border-light);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform-origin: top left;
+}
+
+.hint, .cell {
+    display: flex; justify-content: center; align-items: center;
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.hint { background-color: var(--hint-bg); font-size: var(--hint-font, 11px); color: #444; font-weight: 500; line-height: 1; transition: background-color 0.2s; }
+
+.hint.col {
+    position: sticky; top: 0; z-index: 10;
+    flex-direction: column; justify-content: flex-end;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--border-heavy);
+}
+.hint.row {
+    position: sticky; left: 0; z-index: 10;
+    flex-direction: row; justify-content: flex-end; align-items: center;
+    padding-right: 4px;
+    border-right: 2px solid var(--border-heavy);
+}
+
+.corner {
+    position: sticky; top: 0; left: 0; z-index: 20;
+    background: #ddd;
+    border-right: 2px solid var(--border-heavy);
+    border-bottom: 2px solid var(--border-heavy);
+}
+
+.hint.completed { background-color: var(--hint-done-bg); }
+.hint.completed .hint-span { color: #888; opacity: 0.7; }
+
+.hint-span { margin: 0 1px; padding: 2px; cursor: pointer; display: inline-block;}
+.hint-span.checked { text-decoration: line-through; color: #999; opacity: 0.85; }
+/* 끝난 조각 숫자 지우기(설정) — 손으로 지운 숫자와 같은 모양 */
+.hint-span.auto-crossed { text-decoration: line-through; color: #999; opacity: 0.85; }
+
+.cell { font-size: calc(var(--cell-size) * 0.6); position: relative; }
+.cell.filled { background-color: var(--filled-color); border-color: var(--border-light); }
+.cell.crossed { color: var(--x-color); }
+/* X 는 글자 "×"(칸의 60%) 대신 칸을 가로지르는 두 줄 — 칸 크기를 따라 굵어진다.
+   그라데이션으로 그리면 칸 위치(소수 px)마다 굵기가 2~3px 로 달라져 SVG 마스크로 그린다 */
+.cell.crossed::after, .cell.preview-x::after {
+    content: ""; position: absolute; inset: var(--x-inset, 22%);
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 1L9 9M9 1L1 9' stroke='%23000' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 1L9 9M9 1L1 9' stroke='%23000' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+/* 메모(가정) — ▲ 칠한다고 가정, / 비운다고 가정. 진짜 칠·X 와 헷갈리지 않게 주황 한 색.
+   획을 긋는 중(drag-target)엔 미리보기가 대신 그린다 */
+.cell.memo-f:not(.drag-target)::after, .cell.preview-mf::after,
+.cell.memo-x:not(.drag-target)::after, .cell.preview-mx::after {
+    content: ""; position: absolute;
+    background-color: var(--memo-color);
+}
+.cell.memo-f:not(.drag-target)::after, .cell.preview-mf::after {
+    inset: 24%;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1.5L9 8.5H1Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1.5L9 8.5H1Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.cell.memo-x:not(.drag-target)::after, .cell.preview-mx::after {
+    inset: var(--x-inset, 22%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 9L9 1' stroke='%23000' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 9L9 1' stroke='%23000' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.cell.preview-mf::after, .cell.preview-mx::after { opacity: 0.55; }
+
+.thick-r { border-right: 2px solid var(--border-heavy) !important; }
+.thick-b { border-bottom: 2px solid var(--border-heavy) !important; }
+
+.cell-coord {
+    position: absolute; bottom: 1px; right: 1px;
+    font-size: 8px; color: #999; font-family: monospace;
+    pointer-events: none; line-height: 1; z-index: 5;
+    transform: scale(0.8); transform-origin: bottom right;
+}
+.cell.filled .cell-coord { color: rgba(255,255,255,0.4); }
+
+/* 정답 연출 (js/pic_viewer.js reveal) — 힌트·격자·X 가 사라지고 칠한 칸이 붙어 그림이 된다.
+   테두리를 투명하게 하면 칠한 칸 배경이 테두리 밑까지 깔려 틈이 메워진다 */
+.game-board.revealing { border-color: transparent; transition: border-color .45s; }
+.game-board.revealing .hint,
+.game-board.revealing .corner { opacity: 0; transition: opacity .45s; }
+.game-board.revealing .cell { border-color: transparent !important; transition: border-color .45s; }
+.game-board.revealing .cell::after,
+.game-board.revealing .cell-coord { opacity: 0; transition: opacity .45s; }
+
+.cell.preview-f { background-color: var(--preview-fill); }
+.cell.preview-x { color: var(--preview-cross); }
+.cell.preview-erase { background-color: var(--preview-erase); }
+
+/* [수정됨] 힌트 배경을 은은한 그레이톤으로 변경 (기존보다 채도 낮춤) */
+.hint.guide-highlight {
+    background-color: #edf2f7 !important;
+}
+
+/* [수정됨] 셀 가이드라인 투명도 대폭 낮춤 (0.15 -> 0.06) 및 차분한 블루톤 적용 */
+.cell.guide-highlight::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(66, 100, 160, 0.06);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.toolbar {
+    height: var(--toolbar-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex; justify-content: center; align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+    padding-bottom: env(safe-area-inset-bottom);
+    flex-shrink: 0;
+    z-index: 101;
+}
+.tool-btn {
+    width: 40px; height: 40px; border: none;
+    background: transparent; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    color: #888; cursor: pointer;
+    outline: none; -webkit-tap-highlight-color: transparent;
+    transition: all 0.15s;
+}
+.tool-btn.active {
+    color: #2c3e50; background-color: rgba(44, 62, 80, 0.1);
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.3);
+}
+.tool-icon { font-size: 1.3rem; }
+/* 메모는 도구가 아니라 켜고 끄는 상태 — 고른 도구(active)와 따로 주황 테두리 */
+.tool-btn.memo-on { background-color: rgba(240, 140, 0, 0.12); box-shadow: 0 0 0 2px var(--memo-color); }
+
+/* 메모가 있을 때만 도구바 위에 떠 있는 한 줄 — 자리를 차지하지 않아 판·격자가 움직이지 않는다 */
+.memo-bar {
+    position: fixed; left: 50%; transform: translateX(-50%);
+    bottom: calc(var(--toolbar-height) + 8px);
+    display: none; align-items: center; gap: 6px;
+    padding: 4px 4px 4px 12px; border-radius: 18px;
+    background: rgba(255, 255, 255, 0.95); border: 1px solid var(--memo-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 150; font-size: 0.85rem; color: #333; white-space: nowrap;
+}
+.memo-bar.show { display: flex; }
+.memo-btn {
+    border: 0; border-radius: 14px; padding: 5px 12px;
+    font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.memo-commit { background: var(--memo-color); color: #fff; font-weight: bold; }
+.memo-clear { background: #e9ecef; color: #333; }
+/* 메모로 다 맞았을 때 — 제출 대신 확정을 강조 */
+.memo-commit.ready { animation: memoPulse 1.4s ease-in-out infinite; }
+@keyframes memoPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(240, 140, 0, 0.55); }
+    50%      { box-shadow: 0 0 0 9px rgba(240, 140, 0, 0); }
+}
+/* 메모 줄이 판 맨 아래 줄을 가리지 않게 판 밑에 스크롤 여유를 둔다 — 자리를 차지하지 않는(absolute) 빈 조각이라
+   가운데 놓인 작은 판은 움직이지 않는다 */
+body.memo-used .game-board { position: relative; }
+body.memo-used .game-board::after {
+    content: ""; position: absolute; left: 0; top: 100%;
+    width: 1px; height: 56px; pointer-events: none;
+}
+body.has-memo { --nemo-toast-bottom: 110px; }
+
+#drag-tooltip {
+    position: fixed;
+    background-color: rgba(33, 37, 41, 0.95);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    pointer-events: none; z-index: 1000; display: none;
+    transform: translate(-50%, -130%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.tooltip-accent { color: #f1c40f; font-weight: bold; font-size: 1rem; }
+
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); z-index: 2000;
+    display: none; justify-content: center; align-items: center;
+    backdrop-filter: blur(2px);
+}
+.modal-box {
+    background: white; padding: 24px; border-radius: 12px;
+    width: 80%; max-width: 320px; text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: popIn 0.3s ease-out;
+}
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.modal-msg { margin-bottom: 20px; font-size: 1.1rem; color: #333; line-height: 1.5; font-weight: 500;}
+.modal-btn {
+    background: #2c3e50; color: white; border: none;
+    padding: 12px 30px; border-radius: 6px; font-weight: bold;
+    cursor: pointer; font-size: 1rem;
+    transition: background 0.2s;
+}
+.modal-btn:active { background: #1a252f; }
+
+/* 알림(nemoToast, js/nemo_ui.js) 자리 — 아래 도구 줄 위 */
+:root { --nemo-toast-bottom: 70px; }
+
+.load-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.load-item {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.load-item:active { background-color: #f5f5f5; }
+.load-item:last-child { border-bottom: none; }
+.load-info { display: flex; flex-direction: column; flex: 1; }
+.load-date { font-size: 0.9rem; font-weight: bold; color: #333; }
+.load-meta { font-size: 0.8rem; color: #888; margin-top: 2px; }
+.btn-delete-save {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    background: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ===== Dark Mode ===== */
+body.dark-mode {
+    --filled-color: #d4d4d4;
+    --x-color: #e74c3c;
+    --preview-fill: rgba(212,212,212,0.5);
+    --preview-cross: rgba(231,76,60,0.5);
+    --preview-erase: rgba(255,0,0,0.2);
+    --hint-bg: #2a2f35;
+    --hint-done-bg: #3a3f45;
+    --border-light: #444;
+    --border-heavy: #999;
+    --reveal-fill: #d4d4d4;
+    --memo-color: #ffa94d;
+    background-color: #1a1d23; color: #ddd;
+}
+body.dark-mode header { background: #22262e; border-color: #444; }
+body.dark-mode .title { color: #eee; }
+body.dark-mode .game-timer { color: #999; }
+body.dark-mode .icon-btn { background: #2a2f35; border-color: #444; }
+body.dark-mode .chk-btn { background: #3498db; }
+body.dark-mode .settings-panel { background: #2a2f35; border-color: #444; color: #ddd; }
+body.dark-mode .settings-menu { border-color: #444 !important; }
+body.dark-mode .settings-tutorial { border-color: #444; }
+body.dark-mode .game-viewport { background: #1e2228; }
+body.dark-mode .game-board { background: #2a2f35; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+body.dark-mode .hint { color: #ccc; }
+body.dark-mode .corner { background: #333; }
+body.dark-mode .hint.completed .hint-span { color: #888; }
+body.dark-mode .hint-span.checked, body.dark-mode .hint-span.auto-crossed { color: #777; }
+body.dark-mode .hint.guide-highlight { background-color: #333a44 !important; }
+body.dark-mode .cell.guide-highlight::before { background-color: rgba(100,140,200,0.08); }
+body.dark-mode .cell-coord { color: #666; }
+body.dark-mode .cell.filled .cell-coord { color: rgba(0,0,0,0.4); }
+body.dark-mode .toolbar { background: rgba(34, 38, 46, 0.85); border-color: #444; }
+body.dark-mode .tool-btn { color: #888; }
+body.dark-mode .tool-btn.active { color: #eee; background-color: rgba(255, 255, 255, 0.1); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2); }
+body.dark-mode .modal-box { background: #2a2f35; }
+body.dark-mode .modal-msg { color: #ddd; }
+body.dark-mode .modal-btn { background: #3498db; }
+body.dark-mode .load-list-container { border-color: #444; }
+body.dark-mode .load-item { border-color: #333; }
+body.dark-mode .load-item:active { background-color: #333; }
+body.dark-mode .load-date { color: #ddd; }
+body.dark-mode .load-meta { color: #888; }
+body.dark-mode .btn-delete-save { color: #ff6666; border-color: #ff6666; }
+body.dark-mode .memo-bar { background: rgba(42, 47, 53, 0.95); color: #ddd; }
+body.dark-mode .memo-clear { background: #3a3f45; color: #ddd; }
+body.dark-mode .memo-commit { color: #1a1d23; }
+
+/* ===== 클래식 색 (⚙️ 체크) — PC 레거시 플레이어(css/nemo.css·nemo_sprite.png)와 같은 색 =====
+   회색 칠 + 검은 선. 판은 다크 모드여도 밝은 모드와 똑같다 — 다크 모드(사이트 전체)는 판 밖(헤더·도구바·메뉴)만.
+   그래서 아래는 다크 모드가 판에 거는 규칙을 모두 되덮는다(같은 우선순위, 파일 뒤쪽이 이긴다) */
+body.classic {
+    --filled-color: #777777;
+    --reveal-fill: #777777;
+    --x-color: #3a3a3a;
+    --preview-fill: rgba(119, 119, 119, 0.6);
+    --preview-cross: rgba(58, 58, 58, 0.5);
+    --hint-bg: #a3cca2;
+    --hint-done-bg: #8fb98e;
+    --border-light: #000000;
+    --border-heavy: #000000;
+    --x-inset: 12%;
+    --memo-color: #f08c00;
+}
+/* 보드 배경은 흰색 그대로 — 정답 연출(playReveal)이 빈칸 색으로 쓴다. 초록은 바깥과 힌트 칸만 */
+body.classic .game-viewport { background: #a3cca2; }
+body.classic .game-board { background: #fff; box-shadow: none; border-top-color: #a3cca2; border-left-color: #a3cca2; }
+body.classic .corner { background: #a3cca2; }
+body.classic .hint { color: #444; border-right-color: transparent; border-bottom-color: transparent; }
+/* 초록 숫자 칸 위에서 #999 는 대비 1.5:1 로 거의 안 보였다 — #666 은 3.2:1 (2026-10-27) */
+body.classic .hint-span.checked, body.classic .hint-span.auto-crossed { color: #666; opacity: 1; }
+body.classic .hint.col { border-bottom-color: #000; }
+body.classic .hint.row { border-right-color: #000; }
+body.classic .hint.guide-highlight { background-color: #c6e1c5 !important; }
+body.classic .cell.guide-highlight::before { background-color: rgba(66, 100, 160, 0.06); }
+body.classic .cell-coord { display: none; }

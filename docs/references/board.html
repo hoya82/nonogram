@@ -1,0 +1,1832 @@
+<div id="game-board" class="game-board"
+  style="grid-template-columns: 246px repeat(40, 26px); grid-template-rows: 144px repeat(40, 26px); width: 1286px;">
+  <div class="corner"></div>
+  <div class="hint col" id="vhint-0"><span class="hint-span">7</span><span class="hint-span">19</span></div>
+  <div class="hint col" id="vhint-1"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-2"><span class="hint-span">1</span><span class="hint-span">9</span><span
+      class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-3"><span class="hint-span">6</span><span class="hint-span">2</span><span
+      class="hint-span">4</span></div>
+  <div class="hint col thick-r" id="vhint-4"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-5"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-6"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">22</span></div>
+  <div class="hint col" id="vhint-7"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-8"><span class="hint-span">1</span><span class="hint-span">5</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">4</span><span
+      class="hint-span">11</span></div>
+  <div class="hint col thick-r" id="vhint-9"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">4</span><span class="hint-span">3</span></div>
+  <div class="hint col" id="vhint-10"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">3</span></div>
+  <div class="hint col" id="vhint-11"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">4</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-12"><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-13"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="hint col thick-r" id="vhint-14"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">6</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-15"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">4</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-16"><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">3</span><span
+      class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-17"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-18"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">7</span><span class="hint-span">3</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col thick-r" id="vhint-19"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">6</span><span class="hint-span">2</span><span class="hint-span">3</span><span
+      class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-20"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">6</span><span class="hint-span">2</span><span class="hint-span">3</span><span
+      class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-21"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">7</span><span class="hint-span">3</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-22"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-23"><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">3</span><span
+      class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="hint col thick-r" id="vhint-24"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">4</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-25"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">6</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-26"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-27"><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span></div>
+  <div class="hint col" id="vhint-28"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">4</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span></div>
+  <div class="hint col thick-r" id="vhint-29"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">3</span></div>
+  <div class="hint col" id="vhint-30"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">4</span><span class="hint-span">3</span></div>
+  <div class="hint col" id="vhint-31"><span class="hint-span">1</span><span class="hint-span">5</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">4</span><span
+      class="hint-span">11</span></div>
+  <div class="hint col" id="vhint-32"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-33"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">22</span></div>
+  <div class="hint col thick-r" id="vhint-34"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-35"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-36"><span class="hint-span">6</span><span class="hint-span">2</span><span
+      class="hint-span">4</span></div>
+  <div class="hint col" id="vhint-37"><span class="hint-span">1</span><span class="hint-span">9</span><span
+      class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-38"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">3</span><span class="hint-span">1</span></div>
+  <div class="hint col" id="vhint-39"><span class="hint-span">7</span><span class="hint-span">19</span></div>
+  <div class="hint row" id="hhint-0"><span class="hint-span">34</span></div>
+  <div class="cell" data-x="0" data-y="0"></div>
+  <div class="cell" data-x="1" data-y="0"></div>
+  <div class="cell" data-x="2" data-y="0"></div>
+  <div class="cell" data-x="3" data-y="0"></div>
+  <div class="cell thick-r" data-x="4" data-y="0"></div>
+  <div class="cell" data-x="5" data-y="0"></div>
+  <div class="cell" data-x="6" data-y="0"></div>
+  <div class="cell" data-x="7" data-y="0"></div>
+  <div class="cell" data-x="8" data-y="0"></div>
+  <div class="cell thick-r" data-x="9" data-y="0"></div>
+  <div class="cell" data-x="10" data-y="0"></div>
+  <div class="cell" data-x="11" data-y="0"></div>
+  <div class="cell" data-x="12" data-y="0"></div>
+  <div class="cell" data-x="13" data-y="0"></div>
+  <div class="cell thick-r" data-x="14" data-y="0"></div>
+  <div class="cell" data-x="15" data-y="0"></div>
+  <div class="cell" data-x="16" data-y="0"></div>
+  <div class="cell" data-x="17" data-y="0"></div>
+  <div class="cell" data-x="18" data-y="0"></div>
+  <div class="cell thick-r" data-x="19" data-y="0"></div>
+  <div class="cell" data-x="20" data-y="0"></div>
+  <div class="cell" data-x="21" data-y="0"></div>
+  <div class="cell" data-x="22" data-y="0"></div>
+  <div class="cell" data-x="23" data-y="0"></div>
+  <div class="cell thick-r" data-x="24" data-y="0"></div>
+  <div class="cell" data-x="25" data-y="0"></div>
+  <div class="cell" data-x="26" data-y="0"></div>
+  <div class="cell" data-x="27" data-y="0"></div>
+  <div class="cell" data-x="28" data-y="0"></div>
+  <div class="cell thick-r" data-x="29" data-y="0"></div>
+  <div class="cell" data-x="30" data-y="0"></div>
+  <div class="cell" data-x="31" data-y="0"></div>
+  <div class="cell" data-x="32" data-y="0"></div>
+  <div class="cell" data-x="33" data-y="0"></div>
+  <div class="cell thick-r" data-x="34" data-y="0"></div>
+  <div class="cell" data-x="35" data-y="0"></div>
+  <div class="cell" data-x="36" data-y="0"></div>
+  <div class="cell" data-x="37" data-y="0"></div>
+  <div class="cell" data-x="38" data-y="0"></div>
+  <div class="cell" data-x="39" data-y="0"></div>
+  <div class="hint row" id="hhint-1"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">5</span><span class="hint-span">1</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="1"></div>
+  <div class="cell" data-x="1" data-y="1"></div>
+  <div class="cell" data-x="2" data-y="1"></div>
+  <div class="cell" data-x="3" data-y="1"></div>
+  <div class="cell thick-r" data-x="4" data-y="1"></div>
+  <div class="cell" data-x="5" data-y="1"></div>
+  <div class="cell" data-x="6" data-y="1"></div>
+  <div class="cell" data-x="7" data-y="1"></div>
+  <div class="cell" data-x="8" data-y="1"></div>
+  <div class="cell thick-r" data-x="9" data-y="1"></div>
+  <div class="cell" data-x="10" data-y="1"></div>
+  <div class="cell" data-x="11" data-y="1"></div>
+  <div class="cell" data-x="12" data-y="1"></div>
+  <div class="cell" data-x="13" data-y="1"></div>
+  <div class="cell thick-r" data-x="14" data-y="1"></div>
+  <div class="cell" data-x="15" data-y="1"></div>
+  <div class="cell" data-x="16" data-y="1"></div>
+  <div class="cell" data-x="17" data-y="1"></div>
+  <div class="cell" data-x="18" data-y="1"></div>
+  <div class="cell thick-r" data-x="19" data-y="1"></div>
+  <div class="cell" data-x="20" data-y="1"></div>
+  <div class="cell" data-x="21" data-y="1"></div>
+  <div class="cell" data-x="22" data-y="1"></div>
+  <div class="cell" data-x="23" data-y="1"></div>
+  <div class="cell thick-r" data-x="24" data-y="1"></div>
+  <div class="cell" data-x="25" data-y="1"></div>
+  <div class="cell" data-x="26" data-y="1"></div>
+  <div class="cell" data-x="27" data-y="1"></div>
+  <div class="cell" data-x="28" data-y="1"></div>
+  <div class="cell thick-r" data-x="29" data-y="1"></div>
+  <div class="cell" data-x="30" data-y="1"></div>
+  <div class="cell" data-x="31" data-y="1"></div>
+  <div class="cell" data-x="32" data-y="1"></div>
+  <div class="cell" data-x="33" data-y="1"></div>
+  <div class="cell thick-r" data-x="34" data-y="1"></div>
+  <div class="cell" data-x="35" data-y="1"></div>
+  <div class="cell" data-x="36" data-y="1"></div>
+  <div class="cell" data-x="37" data-y="1"></div>
+  <div class="cell" data-x="38" data-y="1"></div>
+  <div class="cell" data-x="39" data-y="1"></div>
+  <div class="hint row" id="hhint-2"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="2"></div>
+  <div class="cell" data-x="1" data-y="2"></div>
+  <div class="cell" data-x="2" data-y="2"></div>
+  <div class="cell" data-x="3" data-y="2"></div>
+  <div class="cell thick-r" data-x="4" data-y="2"></div>
+  <div class="cell" data-x="5" data-y="2"></div>
+  <div class="cell" data-x="6" data-y="2"></div>
+  <div class="cell" data-x="7" data-y="2"></div>
+  <div class="cell" data-x="8" data-y="2"></div>
+  <div class="cell thick-r" data-x="9" data-y="2"></div>
+  <div class="cell" data-x="10" data-y="2"></div>
+  <div class="cell" data-x="11" data-y="2"></div>
+  <div class="cell" data-x="12" data-y="2"></div>
+  <div class="cell" data-x="13" data-y="2"></div>
+  <div class="cell thick-r" data-x="14" data-y="2"></div>
+  <div class="cell" data-x="15" data-y="2"></div>
+  <div class="cell" data-x="16" data-y="2"></div>
+  <div class="cell" data-x="17" data-y="2"></div>
+  <div class="cell" data-x="18" data-y="2"></div>
+  <div class="cell thick-r" data-x="19" data-y="2"></div>
+  <div class="cell" data-x="20" data-y="2"></div>
+  <div class="cell" data-x="21" data-y="2"></div>
+  <div class="cell" data-x="22" data-y="2"></div>
+  <div class="cell" data-x="23" data-y="2"></div>
+  <div class="cell thick-r" data-x="24" data-y="2"></div>
+  <div class="cell" data-x="25" data-y="2"></div>
+  <div class="cell" data-x="26" data-y="2"></div>
+  <div class="cell" data-x="27" data-y="2"></div>
+  <div class="cell" data-x="28" data-y="2"></div>
+  <div class="cell thick-r" data-x="29" data-y="2"></div>
+  <div class="cell" data-x="30" data-y="2"></div>
+  <div class="cell" data-x="31" data-y="2"></div>
+  <div class="cell" data-x="32" data-y="2"></div>
+  <div class="cell" data-x="33" data-y="2"></div>
+  <div class="cell thick-r" data-x="34" data-y="2"></div>
+  <div class="cell" data-x="35" data-y="2"></div>
+  <div class="cell" data-x="36" data-y="2"></div>
+  <div class="cell" data-x="37" data-y="2"></div>
+  <div class="cell" data-x="38" data-y="2"></div>
+  <div class="cell" data-x="39" data-y="2"></div>
+  <div class="hint row" id="hhint-3"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="3"></div>
+  <div class="cell" data-x="1" data-y="3"></div>
+  <div class="cell" data-x="2" data-y="3"></div>
+  <div class="cell" data-x="3" data-y="3"></div>
+  <div class="cell thick-r" data-x="4" data-y="3"></div>
+  <div class="cell" data-x="5" data-y="3"></div>
+  <div class="cell" data-x="6" data-y="3"></div>
+  <div class="cell" data-x="7" data-y="3"></div>
+  <div class="cell" data-x="8" data-y="3"></div>
+  <div class="cell thick-r" data-x="9" data-y="3"></div>
+  <div class="cell" data-x="10" data-y="3"></div>
+  <div class="cell" data-x="11" data-y="3"></div>
+  <div class="cell" data-x="12" data-y="3"></div>
+  <div class="cell" data-x="13" data-y="3"></div>
+  <div class="cell thick-r" data-x="14" data-y="3"></div>
+  <div class="cell" data-x="15" data-y="3"></div>
+  <div class="cell" data-x="16" data-y="3"></div>
+  <div class="cell" data-x="17" data-y="3"></div>
+  <div class="cell" data-x="18" data-y="3"></div>
+  <div class="cell thick-r" data-x="19" data-y="3"></div>
+  <div class="cell" data-x="20" data-y="3"></div>
+  <div class="cell" data-x="21" data-y="3"></div>
+  <div class="cell" data-x="22" data-y="3"></div>
+  <div class="cell" data-x="23" data-y="3"></div>
+  <div class="cell thick-r" data-x="24" data-y="3"></div>
+  <div class="cell" data-x="25" data-y="3"></div>
+  <div class="cell" data-x="26" data-y="3"></div>
+  <div class="cell" data-x="27" data-y="3"></div>
+  <div class="cell" data-x="28" data-y="3"></div>
+  <div class="cell thick-r" data-x="29" data-y="3"></div>
+  <div class="cell" data-x="30" data-y="3"></div>
+  <div class="cell" data-x="31" data-y="3"></div>
+  <div class="cell" data-x="32" data-y="3"></div>
+  <div class="cell" data-x="33" data-y="3"></div>
+  <div class="cell thick-r" data-x="34" data-y="3"></div>
+  <div class="cell" data-x="35" data-y="3"></div>
+  <div class="cell" data-x="36" data-y="3"></div>
+  <div class="cell" data-x="37" data-y="3"></div>
+  <div class="cell" data-x="38" data-y="3"></div>
+  <div class="cell" data-x="39" data-y="3"></div>
+  <div class="hint row thick-b" id="hhint-4"><span class="hint-span">2</span><span class="hint-span">3</span><span
+      class="hint-span">4</span><span class="hint-span">3</span><span class="hint-span">2</span></div>
+  <div class="cell thick-b" data-x="0" data-y="4"></div>
+  <div class="cell thick-b" data-x="1" data-y="4"></div>
+  <div class="cell thick-b" data-x="2" data-y="4"></div>
+  <div class="cell thick-b" data-x="3" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="4"><span class="cell-coord">5,5</span></div>
+  <div class="cell thick-b" data-x="5" data-y="4"></div>
+  <div class="cell thick-b" data-x="6" data-y="4"></div>
+  <div class="cell thick-b" data-x="7" data-y="4"></div>
+  <div class="cell thick-b" data-x="8" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="4"><span class="cell-coord">10,5</span></div>
+  <div class="cell thick-b" data-x="10" data-y="4"></div>
+  <div class="cell thick-b" data-x="11" data-y="4"></div>
+  <div class="cell thick-b" data-x="12" data-y="4"></div>
+  <div class="cell thick-b" data-x="13" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="4"><span class="cell-coord">15,5</span></div>
+  <div class="cell thick-b" data-x="15" data-y="4"></div>
+  <div class="cell thick-b" data-x="16" data-y="4"></div>
+  <div class="cell thick-b" data-x="17" data-y="4"></div>
+  <div class="cell thick-b" data-x="18" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="4"><span class="cell-coord">20,5</span></div>
+  <div class="cell thick-b" data-x="20" data-y="4"></div>
+  <div class="cell thick-b" data-x="21" data-y="4"></div>
+  <div class="cell thick-b" data-x="22" data-y="4"></div>
+  <div class="cell thick-b" data-x="23" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="4"><span class="cell-coord">25,5</span></div>
+  <div class="cell thick-b" data-x="25" data-y="4"></div>
+  <div class="cell thick-b" data-x="26" data-y="4"></div>
+  <div class="cell thick-b" data-x="27" data-y="4"></div>
+  <div class="cell thick-b" data-x="28" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="4"><span class="cell-coord">30,5</span></div>
+  <div class="cell thick-b" data-x="30" data-y="4"></div>
+  <div class="cell thick-b" data-x="31" data-y="4"></div>
+  <div class="cell thick-b" data-x="32" data-y="4"></div>
+  <div class="cell thick-b" data-x="33" data-y="4"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="4"><span class="cell-coord">35,5</span></div>
+  <div class="cell thick-b" data-x="35" data-y="4"></div>
+  <div class="cell thick-b" data-x="36" data-y="4"></div>
+  <div class="cell thick-b" data-x="37" data-y="4"></div>
+  <div class="cell thick-b" data-x="38" data-y="4"></div>
+  <div class="cell thick-b" data-x="39" data-y="4"><span class="cell-coord">40,5</span></div>
+  <div class="hint row" id="hhint-5"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="5"></div>
+  <div class="cell" data-x="1" data-y="5"></div>
+  <div class="cell" data-x="2" data-y="5"></div>
+  <div class="cell" data-x="3" data-y="5"></div>
+  <div class="cell thick-r" data-x="4" data-y="5"></div>
+  <div class="cell" data-x="5" data-y="5"></div>
+  <div class="cell" data-x="6" data-y="5"></div>
+  <div class="cell" data-x="7" data-y="5"></div>
+  <div class="cell" data-x="8" data-y="5"></div>
+  <div class="cell thick-r" data-x="9" data-y="5"></div>
+  <div class="cell" data-x="10" data-y="5"></div>
+  <div class="cell" data-x="11" data-y="5"></div>
+  <div class="cell" data-x="12" data-y="5"></div>
+  <div class="cell" data-x="13" data-y="5"></div>
+  <div class="cell thick-r" data-x="14" data-y="5"></div>
+  <div class="cell" data-x="15" data-y="5"></div>
+  <div class="cell" data-x="16" data-y="5"></div>
+  <div class="cell" data-x="17" data-y="5"></div>
+  <div class="cell" data-x="18" data-y="5"></div>
+  <div class="cell thick-r" data-x="19" data-y="5"></div>
+  <div class="cell" data-x="20" data-y="5"></div>
+  <div class="cell" data-x="21" data-y="5"></div>
+  <div class="cell" data-x="22" data-y="5"></div>
+  <div class="cell" data-x="23" data-y="5"></div>
+  <div class="cell thick-r" data-x="24" data-y="5"></div>
+  <div class="cell" data-x="25" data-y="5"></div>
+  <div class="cell" data-x="26" data-y="5"></div>
+  <div class="cell" data-x="27" data-y="5"></div>
+  <div class="cell" data-x="28" data-y="5"></div>
+  <div class="cell thick-r" data-x="29" data-y="5"></div>
+  <div class="cell" data-x="30" data-y="5"></div>
+  <div class="cell" data-x="31" data-y="5"></div>
+  <div class="cell" data-x="32" data-y="5"></div>
+  <div class="cell" data-x="33" data-y="5"></div>
+  <div class="cell thick-r" data-x="34" data-y="5"></div>
+  <div class="cell" data-x="35" data-y="5"></div>
+  <div class="cell" data-x="36" data-y="5"></div>
+  <div class="cell" data-x="37" data-y="5"></div>
+  <div class="cell" data-x="38" data-y="5"></div>
+  <div class="cell" data-x="39" data-y="5"></div>
+  <div class="hint row" id="hhint-6"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">3</span><span class="hint-span">3</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="6"></div>
+  <div class="cell" data-x="1" data-y="6"></div>
+  <div class="cell" data-x="2" data-y="6"></div>
+  <div class="cell" data-x="3" data-y="6"></div>
+  <div class="cell thick-r" data-x="4" data-y="6"></div>
+  <div class="cell" data-x="5" data-y="6"></div>
+  <div class="cell" data-x="6" data-y="6"></div>
+  <div class="cell" data-x="7" data-y="6"></div>
+  <div class="cell" data-x="8" data-y="6"></div>
+  <div class="cell thick-r" data-x="9" data-y="6"></div>
+  <div class="cell" data-x="10" data-y="6"></div>
+  <div class="cell" data-x="11" data-y="6"></div>
+  <div class="cell" data-x="12" data-y="6"></div>
+  <div class="cell" data-x="13" data-y="6"></div>
+  <div class="cell thick-r" data-x="14" data-y="6"></div>
+  <div class="cell" data-x="15" data-y="6"></div>
+  <div class="cell" data-x="16" data-y="6"></div>
+  <div class="cell" data-x="17" data-y="6"></div>
+  <div class="cell" data-x="18" data-y="6"></div>
+  <div class="cell thick-r" data-x="19" data-y="6"></div>
+  <div class="cell" data-x="20" data-y="6"></div>
+  <div class="cell" data-x="21" data-y="6"></div>
+  <div class="cell" data-x="22" data-y="6"></div>
+  <div class="cell" data-x="23" data-y="6"></div>
+  <div class="cell thick-r" data-x="24" data-y="6"></div>
+  <div class="cell" data-x="25" data-y="6"></div>
+  <div class="cell" data-x="26" data-y="6"></div>
+  <div class="cell" data-x="27" data-y="6"></div>
+  <div class="cell" data-x="28" data-y="6"></div>
+  <div class="cell thick-r" data-x="29" data-y="6"></div>
+  <div class="cell" data-x="30" data-y="6"></div>
+  <div class="cell" data-x="31" data-y="6"></div>
+  <div class="cell" data-x="32" data-y="6"></div>
+  <div class="cell" data-x="33" data-y="6"></div>
+  <div class="cell thick-r" data-x="34" data-y="6"></div>
+  <div class="cell" data-x="35" data-y="6"></div>
+  <div class="cell" data-x="36" data-y="6"></div>
+  <div class="cell" data-x="37" data-y="6"></div>
+  <div class="cell" data-x="38" data-y="6"></div>
+  <div class="cell" data-x="39" data-y="6"></div>
+  <div class="hint row" id="hhint-7"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="7"></div>
+  <div class="cell" data-x="1" data-y="7"></div>
+  <div class="cell" data-x="2" data-y="7"></div>
+  <div class="cell" data-x="3" data-y="7"></div>
+  <div class="cell thick-r" data-x="4" data-y="7"></div>
+  <div class="cell" data-x="5" data-y="7"></div>
+  <div class="cell" data-x="6" data-y="7"></div>
+  <div class="cell" data-x="7" data-y="7"></div>
+  <div class="cell" data-x="8" data-y="7"></div>
+  <div class="cell thick-r" data-x="9" data-y="7"></div>
+  <div class="cell" data-x="10" data-y="7"></div>
+  <div class="cell" data-x="11" data-y="7"></div>
+  <div class="cell" data-x="12" data-y="7"></div>
+  <div class="cell" data-x="13" data-y="7"></div>
+  <div class="cell thick-r" data-x="14" data-y="7"></div>
+  <div class="cell" data-x="15" data-y="7"></div>
+  <div class="cell" data-x="16" data-y="7"></div>
+  <div class="cell" data-x="17" data-y="7"></div>
+  <div class="cell" data-x="18" data-y="7"></div>
+  <div class="cell thick-r" data-x="19" data-y="7"></div>
+  <div class="cell" data-x="20" data-y="7"></div>
+  <div class="cell" data-x="21" data-y="7"></div>
+  <div class="cell" data-x="22" data-y="7"></div>
+  <div class="cell" data-x="23" data-y="7"></div>
+  <div class="cell thick-r" data-x="24" data-y="7"></div>
+  <div class="cell" data-x="25" data-y="7"></div>
+  <div class="cell" data-x="26" data-y="7"></div>
+  <div class="cell" data-x="27" data-y="7"></div>
+  <div class="cell" data-x="28" data-y="7"></div>
+  <div class="cell thick-r" data-x="29" data-y="7"></div>
+  <div class="cell" data-x="30" data-y="7"></div>
+  <div class="cell" data-x="31" data-y="7"></div>
+  <div class="cell" data-x="32" data-y="7"></div>
+  <div class="cell" data-x="33" data-y="7"></div>
+  <div class="cell thick-r" data-x="34" data-y="7"></div>
+  <div class="cell" data-x="35" data-y="7"></div>
+  <div class="cell" data-x="36" data-y="7"></div>
+  <div class="cell" data-x="37" data-y="7"></div>
+  <div class="cell" data-x="38" data-y="7"></div>
+  <div class="cell" data-x="39" data-y="7"></div>
+  <div class="hint row" id="hhint-8"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="8"></div>
+  <div class="cell" data-x="1" data-y="8"></div>
+  <div class="cell" data-x="2" data-y="8"></div>
+  <div class="cell" data-x="3" data-y="8"></div>
+  <div class="cell thick-r" data-x="4" data-y="8"></div>
+  <div class="cell" data-x="5" data-y="8"></div>
+  <div class="cell" data-x="6" data-y="8"></div>
+  <div class="cell" data-x="7" data-y="8"></div>
+  <div class="cell" data-x="8" data-y="8"></div>
+  <div class="cell thick-r" data-x="9" data-y="8"></div>
+  <div class="cell" data-x="10" data-y="8"></div>
+  <div class="cell" data-x="11" data-y="8"></div>
+  <div class="cell" data-x="12" data-y="8"></div>
+  <div class="cell" data-x="13" data-y="8"></div>
+  <div class="cell thick-r" data-x="14" data-y="8"></div>
+  <div class="cell" data-x="15" data-y="8"></div>
+  <div class="cell" data-x="16" data-y="8"></div>
+  <div class="cell" data-x="17" data-y="8"></div>
+  <div class="cell" data-x="18" data-y="8"></div>
+  <div class="cell thick-r" data-x="19" data-y="8"></div>
+  <div class="cell" data-x="20" data-y="8"></div>
+  <div class="cell" data-x="21" data-y="8"></div>
+  <div class="cell" data-x="22" data-y="8"></div>
+  <div class="cell" data-x="23" data-y="8"></div>
+  <div class="cell thick-r" data-x="24" data-y="8"></div>
+  <div class="cell" data-x="25" data-y="8"></div>
+  <div class="cell" data-x="26" data-y="8"></div>
+  <div class="cell" data-x="27" data-y="8"></div>
+  <div class="cell" data-x="28" data-y="8"></div>
+  <div class="cell thick-r" data-x="29" data-y="8"></div>
+  <div class="cell" data-x="30" data-y="8"></div>
+  <div class="cell" data-x="31" data-y="8"></div>
+  <div class="cell" data-x="32" data-y="8"></div>
+  <div class="cell" data-x="33" data-y="8"></div>
+  <div class="cell thick-r" data-x="34" data-y="8"></div>
+  <div class="cell" data-x="35" data-y="8"></div>
+  <div class="cell" data-x="36" data-y="8"></div>
+  <div class="cell" data-x="37" data-y="8"></div>
+  <div class="cell" data-x="38" data-y="8"></div>
+  <div class="cell" data-x="39" data-y="8"></div>
+  <div class="hint row thick-b" id="hhint-9"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span></div>
+  <div class="cell thick-b" data-x="0" data-y="9"></div>
+  <div class="cell thick-b" data-x="1" data-y="9"></div>
+  <div class="cell thick-b" data-x="2" data-y="9"></div>
+  <div class="cell thick-b" data-x="3" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="9"><span class="cell-coord">5,10</span></div>
+  <div class="cell thick-b" data-x="5" data-y="9"></div>
+  <div class="cell thick-b" data-x="6" data-y="9"></div>
+  <div class="cell thick-b" data-x="7" data-y="9"></div>
+  <div class="cell thick-b" data-x="8" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="9"><span class="cell-coord">10,10</span></div>
+  <div class="cell thick-b" data-x="10" data-y="9"></div>
+  <div class="cell thick-b" data-x="11" data-y="9"></div>
+  <div class="cell thick-b" data-x="12" data-y="9"></div>
+  <div class="cell thick-b" data-x="13" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="9"><span class="cell-coord">15,10</span></div>
+  <div class="cell thick-b" data-x="15" data-y="9"></div>
+  <div class="cell thick-b" data-x="16" data-y="9"></div>
+  <div class="cell thick-b" data-x="17" data-y="9"></div>
+  <div class="cell thick-b" data-x="18" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="9"><span class="cell-coord">20,10</span></div>
+  <div class="cell thick-b" data-x="20" data-y="9"></div>
+  <div class="cell thick-b" data-x="21" data-y="9"></div>
+  <div class="cell thick-b" data-x="22" data-y="9"></div>
+  <div class="cell thick-b" data-x="23" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="9"><span class="cell-coord">25,10</span></div>
+  <div class="cell thick-b" data-x="25" data-y="9"></div>
+  <div class="cell thick-b" data-x="26" data-y="9"></div>
+  <div class="cell thick-b" data-x="27" data-y="9"></div>
+  <div class="cell thick-b" data-x="28" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="9"><span class="cell-coord">30,10</span></div>
+  <div class="cell thick-b" data-x="30" data-y="9"></div>
+  <div class="cell thick-b" data-x="31" data-y="9"></div>
+  <div class="cell thick-b" data-x="32" data-y="9"></div>
+  <div class="cell thick-b" data-x="33" data-y="9"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="9"><span class="cell-coord">35,10</span></div>
+  <div class="cell thick-b" data-x="35" data-y="9"></div>
+  <div class="cell thick-b" data-x="36" data-y="9"></div>
+  <div class="cell thick-b" data-x="37" data-y="9"></div>
+  <div class="cell thick-b" data-x="38" data-y="9"></div>
+  <div class="cell thick-b" data-x="39" data-y="9"><span class="cell-coord">40,10</span></div>
+  <div class="hint row" id="hhint-10"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">4</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">4</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="10"></div>
+  <div class="cell" data-x="1" data-y="10"></div>
+  <div class="cell" data-x="2" data-y="10"></div>
+  <div class="cell" data-x="3" data-y="10"></div>
+  <div class="cell thick-r" data-x="4" data-y="10"></div>
+  <div class="cell" data-x="5" data-y="10"></div>
+  <div class="cell" data-x="6" data-y="10"></div>
+  <div class="cell" data-x="7" data-y="10"></div>
+  <div class="cell" data-x="8" data-y="10"></div>
+  <div class="cell thick-r" data-x="9" data-y="10"></div>
+  <div class="cell" data-x="10" data-y="10"></div>
+  <div class="cell" data-x="11" data-y="10"></div>
+  <div class="cell" data-x="12" data-y="10"></div>
+  <div class="cell" data-x="13" data-y="10"></div>
+  <div class="cell thick-r" data-x="14" data-y="10"></div>
+  <div class="cell" data-x="15" data-y="10"></div>
+  <div class="cell" data-x="16" data-y="10"></div>
+  <div class="cell" data-x="17" data-y="10"></div>
+  <div class="cell" data-x="18" data-y="10"></div>
+  <div class="cell thick-r" data-x="19" data-y="10"></div>
+  <div class="cell" data-x="20" data-y="10"></div>
+  <div class="cell" data-x="21" data-y="10"></div>
+  <div class="cell" data-x="22" data-y="10"></div>
+  <div class="cell" data-x="23" data-y="10"></div>
+  <div class="cell thick-r" data-x="24" data-y="10"></div>
+  <div class="cell" data-x="25" data-y="10"></div>
+  <div class="cell" data-x="26" data-y="10"></div>
+  <div class="cell" data-x="27" data-y="10"></div>
+  <div class="cell" data-x="28" data-y="10"></div>
+  <div class="cell thick-r" data-x="29" data-y="10"></div>
+  <div class="cell" data-x="30" data-y="10"></div>
+  <div class="cell" data-x="31" data-y="10"></div>
+  <div class="cell" data-x="32" data-y="10"></div>
+  <div class="cell" data-x="33" data-y="10"></div>
+  <div class="cell thick-r" data-x="34" data-y="10"></div>
+  <div class="cell" data-x="35" data-y="10"></div>
+  <div class="cell" data-x="36" data-y="10"></div>
+  <div class="cell" data-x="37" data-y="10"></div>
+  <div class="cell" data-x="38" data-y="10"></div>
+  <div class="cell" data-x="39" data-y="10"></div>
+  <div class="hint row" id="hhint-11"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">6</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">6</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="11"></div>
+  <div class="cell" data-x="1" data-y="11"></div>
+  <div class="cell" data-x="2" data-y="11"></div>
+  <div class="cell" data-x="3" data-y="11"></div>
+  <div class="cell thick-r" data-x="4" data-y="11"></div>
+  <div class="cell" data-x="5" data-y="11"></div>
+  <div class="cell" data-x="6" data-y="11"></div>
+  <div class="cell" data-x="7" data-y="11"></div>
+  <div class="cell" data-x="8" data-y="11"></div>
+  <div class="cell thick-r" data-x="9" data-y="11"></div>
+  <div class="cell" data-x="10" data-y="11"></div>
+  <div class="cell" data-x="11" data-y="11"></div>
+  <div class="cell" data-x="12" data-y="11"></div>
+  <div class="cell" data-x="13" data-y="11"></div>
+  <div class="cell thick-r" data-x="14" data-y="11"></div>
+  <div class="cell" data-x="15" data-y="11"></div>
+  <div class="cell" data-x="16" data-y="11"></div>
+  <div class="cell" data-x="17" data-y="11"></div>
+  <div class="cell" data-x="18" data-y="11"></div>
+  <div class="cell thick-r" data-x="19" data-y="11"></div>
+  <div class="cell" data-x="20" data-y="11"></div>
+  <div class="cell" data-x="21" data-y="11"></div>
+  <div class="cell" data-x="22" data-y="11"></div>
+  <div class="cell" data-x="23" data-y="11"></div>
+  <div class="cell thick-r" data-x="24" data-y="11"></div>
+  <div class="cell" data-x="25" data-y="11"></div>
+  <div class="cell" data-x="26" data-y="11"></div>
+  <div class="cell" data-x="27" data-y="11"></div>
+  <div class="cell" data-x="28" data-y="11"></div>
+  <div class="cell thick-r" data-x="29" data-y="11"></div>
+  <div class="cell" data-x="30" data-y="11"></div>
+  <div class="cell" data-x="31" data-y="11"></div>
+  <div class="cell" data-x="32" data-y="11"></div>
+  <div class="cell" data-x="33" data-y="11"></div>
+  <div class="cell thick-r" data-x="34" data-y="11"></div>
+  <div class="cell" data-x="35" data-y="11"></div>
+  <div class="cell" data-x="36" data-y="11"></div>
+  <div class="cell" data-x="37" data-y="11"></div>
+  <div class="cell" data-x="38" data-y="11"></div>
+  <div class="cell" data-x="39" data-y="11"></div>
+  <div class="hint row" id="hhint-12"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">3</span><span
+      class="hint-span">3</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">3</span><span class="hint-span">3</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="12"></div>
+  <div class="cell" data-x="1" data-y="12"></div>
+  <div class="cell" data-x="2" data-y="12"></div>
+  <div class="cell" data-x="3" data-y="12"></div>
+  <div class="cell thick-r" data-x="4" data-y="12"></div>
+  <div class="cell" data-x="5" data-y="12"></div>
+  <div class="cell" data-x="6" data-y="12"></div>
+  <div class="cell" data-x="7" data-y="12"></div>
+  <div class="cell" data-x="8" data-y="12"></div>
+  <div class="cell thick-r" data-x="9" data-y="12"></div>
+  <div class="cell" data-x="10" data-y="12"></div>
+  <div class="cell" data-x="11" data-y="12"></div>
+  <div class="cell" data-x="12" data-y="12"></div>
+  <div class="cell" data-x="13" data-y="12"></div>
+  <div class="cell thick-r" data-x="14" data-y="12"></div>
+  <div class="cell" data-x="15" data-y="12"></div>
+  <div class="cell" data-x="16" data-y="12"></div>
+  <div class="cell" data-x="17" data-y="12"></div>
+  <div class="cell" data-x="18" data-y="12"></div>
+  <div class="cell thick-r" data-x="19" data-y="12"></div>
+  <div class="cell" data-x="20" data-y="12"></div>
+  <div class="cell" data-x="21" data-y="12"></div>
+  <div class="cell" data-x="22" data-y="12"></div>
+  <div class="cell" data-x="23" data-y="12"></div>
+  <div class="cell thick-r" data-x="24" data-y="12"></div>
+  <div class="cell" data-x="25" data-y="12"></div>
+  <div class="cell" data-x="26" data-y="12"></div>
+  <div class="cell" data-x="27" data-y="12"></div>
+  <div class="cell" data-x="28" data-y="12"></div>
+  <div class="cell thick-r" data-x="29" data-y="12"></div>
+  <div class="cell" data-x="30" data-y="12"></div>
+  <div class="cell" data-x="31" data-y="12"></div>
+  <div class="cell" data-x="32" data-y="12"></div>
+  <div class="cell" data-x="33" data-y="12"></div>
+  <div class="cell thick-r" data-x="34" data-y="12"></div>
+  <div class="cell" data-x="35" data-y="12"></div>
+  <div class="cell" data-x="36" data-y="12"></div>
+  <div class="cell" data-x="37" data-y="12"></div>
+  <div class="cell" data-x="38" data-y="12"></div>
+  <div class="cell" data-x="39" data-y="12"></div>
+  <div class="hint row" id="hhint-13"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">7</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">7</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="13"></div>
+  <div class="cell" data-x="1" data-y="13"></div>
+  <div class="cell" data-x="2" data-y="13"></div>
+  <div class="cell" data-x="3" data-y="13"></div>
+  <div class="cell thick-r" data-x="4" data-y="13"></div>
+  <div class="cell" data-x="5" data-y="13"></div>
+  <div class="cell" data-x="6" data-y="13"></div>
+  <div class="cell" data-x="7" data-y="13"></div>
+  <div class="cell" data-x="8" data-y="13"></div>
+  <div class="cell thick-r" data-x="9" data-y="13"></div>
+  <div class="cell" data-x="10" data-y="13"></div>
+  <div class="cell" data-x="11" data-y="13"></div>
+  <div class="cell" data-x="12" data-y="13"></div>
+  <div class="cell" data-x="13" data-y="13"></div>
+  <div class="cell thick-r" data-x="14" data-y="13"></div>
+  <div class="cell" data-x="15" data-y="13"></div>
+  <div class="cell" data-x="16" data-y="13"></div>
+  <div class="cell" data-x="17" data-y="13"></div>
+  <div class="cell" data-x="18" data-y="13"></div>
+  <div class="cell thick-r" data-x="19" data-y="13"></div>
+  <div class="cell" data-x="20" data-y="13"></div>
+  <div class="cell" data-x="21" data-y="13"></div>
+  <div class="cell" data-x="22" data-y="13"></div>
+  <div class="cell" data-x="23" data-y="13"></div>
+  <div class="cell thick-r" data-x="24" data-y="13"></div>
+  <div class="cell" data-x="25" data-y="13"></div>
+  <div class="cell" data-x="26" data-y="13"></div>
+  <div class="cell" data-x="27" data-y="13"></div>
+  <div class="cell" data-x="28" data-y="13"></div>
+  <div class="cell thick-r" data-x="29" data-y="13"></div>
+  <div class="cell" data-x="30" data-y="13"></div>
+  <div class="cell" data-x="31" data-y="13"></div>
+  <div class="cell" data-x="32" data-y="13"></div>
+  <div class="cell" data-x="33" data-y="13"></div>
+  <div class="cell thick-r" data-x="34" data-y="13"></div>
+  <div class="cell" data-x="35" data-y="13"></div>
+  <div class="cell" data-x="36" data-y="13"></div>
+  <div class="cell" data-x="37" data-y="13"></div>
+  <div class="cell" data-x="38" data-y="13"></div>
+  <div class="cell" data-x="39" data-y="13"></div>
+  <div class="hint row thick-b" id="hhint-14"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">5</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell thick-b" data-x="0" data-y="14"></div>
+  <div class="cell thick-b" data-x="1" data-y="14"></div>
+  <div class="cell thick-b" data-x="2" data-y="14"></div>
+  <div class="cell thick-b" data-x="3" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="14"><span class="cell-coord">5,15</span></div>
+  <div class="cell thick-b" data-x="5" data-y="14"></div>
+  <div class="cell thick-b" data-x="6" data-y="14"></div>
+  <div class="cell thick-b" data-x="7" data-y="14"></div>
+  <div class="cell thick-b" data-x="8" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="14"><span class="cell-coord">10,15</span></div>
+  <div class="cell thick-b" data-x="10" data-y="14"></div>
+  <div class="cell thick-b" data-x="11" data-y="14"></div>
+  <div class="cell thick-b" data-x="12" data-y="14"></div>
+  <div class="cell thick-b" data-x="13" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="14"><span class="cell-coord">15,15</span></div>
+  <div class="cell thick-b" data-x="15" data-y="14"></div>
+  <div class="cell thick-b" data-x="16" data-y="14"></div>
+  <div class="cell thick-b" data-x="17" data-y="14"></div>
+  <div class="cell thick-b" data-x="18" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="14"><span class="cell-coord">20,15</span></div>
+  <div class="cell thick-b" data-x="20" data-y="14"></div>
+  <div class="cell thick-b" data-x="21" data-y="14"></div>
+  <div class="cell thick-b" data-x="22" data-y="14"></div>
+  <div class="cell thick-b" data-x="23" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="14"><span class="cell-coord">25,15</span></div>
+  <div class="cell thick-b" data-x="25" data-y="14"></div>
+  <div class="cell thick-b" data-x="26" data-y="14"></div>
+  <div class="cell thick-b" data-x="27" data-y="14"></div>
+  <div class="cell thick-b" data-x="28" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="14"><span class="cell-coord">30,15</span></div>
+  <div class="cell thick-b" data-x="30" data-y="14"></div>
+  <div class="cell thick-b" data-x="31" data-y="14"></div>
+  <div class="cell thick-b" data-x="32" data-y="14"></div>
+  <div class="cell thick-b" data-x="33" data-y="14"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="14"><span class="cell-coord">35,15</span></div>
+  <div class="cell thick-b" data-x="35" data-y="14"></div>
+  <div class="cell thick-b" data-x="36" data-y="14"></div>
+  <div class="cell thick-b" data-x="37" data-y="14"></div>
+  <div class="cell thick-b" data-x="38" data-y="14"></div>
+  <div class="cell thick-b" data-x="39" data-y="14"><span class="cell-coord">40,15</span></div>
+  <div class="hint row" id="hhint-15"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span></div>
+  <div class="cell" data-x="0" data-y="15"></div>
+  <div class="cell" data-x="1" data-y="15"></div>
+  <div class="cell" data-x="2" data-y="15"></div>
+  <div class="cell" data-x="3" data-y="15"></div>
+  <div class="cell thick-r" data-x="4" data-y="15"></div>
+  <div class="cell" data-x="5" data-y="15"></div>
+  <div class="cell" data-x="6" data-y="15"></div>
+  <div class="cell" data-x="7" data-y="15"></div>
+  <div class="cell" data-x="8" data-y="15"></div>
+  <div class="cell thick-r" data-x="9" data-y="15"></div>
+  <div class="cell" data-x="10" data-y="15"></div>
+  <div class="cell" data-x="11" data-y="15"></div>
+  <div class="cell" data-x="12" data-y="15"></div>
+  <div class="cell" data-x="13" data-y="15"></div>
+  <div class="cell thick-r" data-x="14" data-y="15"></div>
+  <div class="cell" data-x="15" data-y="15"></div>
+  <div class="cell" data-x="16" data-y="15"></div>
+  <div class="cell" data-x="17" data-y="15"></div>
+  <div class="cell" data-x="18" data-y="15"></div>
+  <div class="cell thick-r" data-x="19" data-y="15"></div>
+  <div class="cell" data-x="20" data-y="15"></div>
+  <div class="cell" data-x="21" data-y="15"></div>
+  <div class="cell" data-x="22" data-y="15"></div>
+  <div class="cell" data-x="23" data-y="15"></div>
+  <div class="cell thick-r" data-x="24" data-y="15"></div>
+  <div class="cell" data-x="25" data-y="15"></div>
+  <div class="cell" data-x="26" data-y="15"></div>
+  <div class="cell" data-x="27" data-y="15"></div>
+  <div class="cell" data-x="28" data-y="15"></div>
+  <div class="cell thick-r" data-x="29" data-y="15"></div>
+  <div class="cell" data-x="30" data-y="15"></div>
+  <div class="cell" data-x="31" data-y="15"></div>
+  <div class="cell" data-x="32" data-y="15"></div>
+  <div class="cell" data-x="33" data-y="15"></div>
+  <div class="cell thick-r" data-x="34" data-y="15"></div>
+  <div class="cell" data-x="35" data-y="15"></div>
+  <div class="cell" data-x="36" data-y="15"></div>
+  <div class="cell" data-x="37" data-y="15"></div>
+  <div class="cell" data-x="38" data-y="15"></div>
+  <div class="cell" data-x="39" data-y="15"></div>
+  <div class="hint row" id="hhint-16"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">5</span><span class="hint-span">4</span><span class="hint-span">5</span><span
+      class="hint-span">1</span><span class="hint-span">2</span></div>
+  <div class="cell" data-x="0" data-y="16"></div>
+  <div class="cell" data-x="1" data-y="16"></div>
+  <div class="cell" data-x="2" data-y="16"></div>
+  <div class="cell" data-x="3" data-y="16"></div>
+  <div class="cell thick-r" data-x="4" data-y="16"></div>
+  <div class="cell" data-x="5" data-y="16"></div>
+  <div class="cell" data-x="6" data-y="16"></div>
+  <div class="cell" data-x="7" data-y="16"></div>
+  <div class="cell" data-x="8" data-y="16"></div>
+  <div class="cell thick-r" data-x="9" data-y="16"></div>
+  <div class="cell" data-x="10" data-y="16"></div>
+  <div class="cell" data-x="11" data-y="16"></div>
+  <div class="cell" data-x="12" data-y="16"></div>
+  <div class="cell" data-x="13" data-y="16"></div>
+  <div class="cell thick-r" data-x="14" data-y="16"></div>
+  <div class="cell" data-x="15" data-y="16"></div>
+  <div class="cell" data-x="16" data-y="16"></div>
+  <div class="cell" data-x="17" data-y="16"></div>
+  <div class="cell" data-x="18" data-y="16"></div>
+  <div class="cell thick-r" data-x="19" data-y="16"></div>
+  <div class="cell" data-x="20" data-y="16"></div>
+  <div class="cell" data-x="21" data-y="16"></div>
+  <div class="cell" data-x="22" data-y="16"></div>
+  <div class="cell" data-x="23" data-y="16"></div>
+  <div class="cell thick-r" data-x="24" data-y="16"></div>
+  <div class="cell" data-x="25" data-y="16"></div>
+  <div class="cell" data-x="26" data-y="16"></div>
+  <div class="cell" data-x="27" data-y="16"></div>
+  <div class="cell" data-x="28" data-y="16"></div>
+  <div class="cell thick-r" data-x="29" data-y="16"></div>
+  <div class="cell" data-x="30" data-y="16"></div>
+  <div class="cell" data-x="31" data-y="16"></div>
+  <div class="cell" data-x="32" data-y="16"></div>
+  <div class="cell" data-x="33" data-y="16"></div>
+  <div class="cell thick-r" data-x="34" data-y="16"></div>
+  <div class="cell" data-x="35" data-y="16"></div>
+  <div class="cell" data-x="36" data-y="16"></div>
+  <div class="cell" data-x="37" data-y="16"></div>
+  <div class="cell" data-x="38" data-y="16"></div>
+  <div class="cell" data-x="39" data-y="16"></div>
+  <div class="hint row" id="hhint-17"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">4</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="17"></div>
+  <div class="cell" data-x="1" data-y="17"></div>
+  <div class="cell" data-x="2" data-y="17"></div>
+  <div class="cell" data-x="3" data-y="17"></div>
+  <div class="cell thick-r" data-x="4" data-y="17"></div>
+  <div class="cell" data-x="5" data-y="17"></div>
+  <div class="cell" data-x="6" data-y="17"></div>
+  <div class="cell" data-x="7" data-y="17"></div>
+  <div class="cell" data-x="8" data-y="17"></div>
+  <div class="cell thick-r" data-x="9" data-y="17"></div>
+  <div class="cell" data-x="10" data-y="17"></div>
+  <div class="cell" data-x="11" data-y="17"></div>
+  <div class="cell" data-x="12" data-y="17"></div>
+  <div class="cell" data-x="13" data-y="17"></div>
+  <div class="cell thick-r" data-x="14" data-y="17"></div>
+  <div class="cell" data-x="15" data-y="17"></div>
+  <div class="cell" data-x="16" data-y="17"></div>
+  <div class="cell" data-x="17" data-y="17"></div>
+  <div class="cell" data-x="18" data-y="17"></div>
+  <div class="cell thick-r" data-x="19" data-y="17"></div>
+  <div class="cell" data-x="20" data-y="17"></div>
+  <div class="cell" data-x="21" data-y="17"></div>
+  <div class="cell" data-x="22" data-y="17"></div>
+  <div class="cell" data-x="23" data-y="17"></div>
+  <div class="cell thick-r" data-x="24" data-y="17"></div>
+  <div class="cell" data-x="25" data-y="17"></div>
+  <div class="cell" data-x="26" data-y="17"></div>
+  <div class="cell" data-x="27" data-y="17"></div>
+  <div class="cell" data-x="28" data-y="17"></div>
+  <div class="cell thick-r" data-x="29" data-y="17"></div>
+  <div class="cell" data-x="30" data-y="17"></div>
+  <div class="cell" data-x="31" data-y="17"></div>
+  <div class="cell" data-x="32" data-y="17"></div>
+  <div class="cell" data-x="33" data-y="17"></div>
+  <div class="cell thick-r" data-x="34" data-y="17"></div>
+  <div class="cell" data-x="35" data-y="17"></div>
+  <div class="cell" data-x="36" data-y="17"></div>
+  <div class="cell" data-x="37" data-y="17"></div>
+  <div class="cell" data-x="38" data-y="17"></div>
+  <div class="cell" data-x="39" data-y="17"></div>
+  <div class="hint row" id="hhint-18"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">6</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="18"></div>
+  <div class="cell" data-x="1" data-y="18"></div>
+  <div class="cell" data-x="2" data-y="18"></div>
+  <div class="cell" data-x="3" data-y="18"></div>
+  <div class="cell thick-r" data-x="4" data-y="18"></div>
+  <div class="cell" data-x="5" data-y="18"></div>
+  <div class="cell" data-x="6" data-y="18"></div>
+  <div class="cell" data-x="7" data-y="18"></div>
+  <div class="cell" data-x="8" data-y="18"></div>
+  <div class="cell thick-r" data-x="9" data-y="18"></div>
+  <div class="cell" data-x="10" data-y="18"></div>
+  <div class="cell" data-x="11" data-y="18"></div>
+  <div class="cell" data-x="12" data-y="18"></div>
+  <div class="cell" data-x="13" data-y="18"></div>
+  <div class="cell thick-r" data-x="14" data-y="18"></div>
+  <div class="cell" data-x="15" data-y="18"></div>
+  <div class="cell" data-x="16" data-y="18"></div>
+  <div class="cell" data-x="17" data-y="18"></div>
+  <div class="cell" data-x="18" data-y="18"></div>
+  <div class="cell thick-r" data-x="19" data-y="18"></div>
+  <div class="cell" data-x="20" data-y="18"></div>
+  <div class="cell" data-x="21" data-y="18"></div>
+  <div class="cell" data-x="22" data-y="18"></div>
+  <div class="cell" data-x="23" data-y="18"></div>
+  <div class="cell thick-r" data-x="24" data-y="18"></div>
+  <div class="cell" data-x="25" data-y="18"></div>
+  <div class="cell" data-x="26" data-y="18"></div>
+  <div class="cell" data-x="27" data-y="18"></div>
+  <div class="cell" data-x="28" data-y="18"></div>
+  <div class="cell thick-r" data-x="29" data-y="18"></div>
+  <div class="cell" data-x="30" data-y="18"></div>
+  <div class="cell" data-x="31" data-y="18"></div>
+  <div class="cell" data-x="32" data-y="18"></div>
+  <div class="cell" data-x="33" data-y="18"></div>
+  <div class="cell thick-r" data-x="34" data-y="18"></div>
+  <div class="cell" data-x="35" data-y="18"></div>
+  <div class="cell" data-x="36" data-y="18"></div>
+  <div class="cell" data-x="37" data-y="18"></div>
+  <div class="cell" data-x="38" data-y="18"></div>
+  <div class="cell" data-x="39" data-y="18"></div>
+  <div class="hint row thick-b" id="hhint-19"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span></div>
+  <div class="cell thick-b" data-x="0" data-y="19"></div>
+  <div class="cell thick-b" data-x="1" data-y="19"></div>
+  <div class="cell thick-b" data-x="2" data-y="19"></div>
+  <div class="cell thick-b" data-x="3" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="19"><span class="cell-coord">5,20</span></div>
+  <div class="cell thick-b" data-x="5" data-y="19"></div>
+  <div class="cell thick-b" data-x="6" data-y="19"></div>
+  <div class="cell thick-b" data-x="7" data-y="19"></div>
+  <div class="cell thick-b" data-x="8" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="19"><span class="cell-coord">10,20</span></div>
+  <div class="cell thick-b" data-x="10" data-y="19"></div>
+  <div class="cell thick-b" data-x="11" data-y="19"></div>
+  <div class="cell thick-b" data-x="12" data-y="19"></div>
+  <div class="cell thick-b" data-x="13" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="19"><span class="cell-coord">15,20</span></div>
+  <div class="cell thick-b" data-x="15" data-y="19"></div>
+  <div class="cell thick-b" data-x="16" data-y="19"></div>
+  <div class="cell thick-b" data-x="17" data-y="19"></div>
+  <div class="cell thick-b" data-x="18" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="19"><span class="cell-coord">20,20</span></div>
+  <div class="cell thick-b" data-x="20" data-y="19"></div>
+  <div class="cell thick-b" data-x="21" data-y="19"></div>
+  <div class="cell thick-b" data-x="22" data-y="19"></div>
+  <div class="cell thick-b" data-x="23" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="19"><span class="cell-coord">25,20</span></div>
+  <div class="cell thick-b" data-x="25" data-y="19"></div>
+  <div class="cell thick-b" data-x="26" data-y="19"></div>
+  <div class="cell thick-b" data-x="27" data-y="19"></div>
+  <div class="cell thick-b" data-x="28" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="19"><span class="cell-coord">30,20</span></div>
+  <div class="cell thick-b" data-x="30" data-y="19"></div>
+  <div class="cell thick-b" data-x="31" data-y="19"></div>
+  <div class="cell thick-b" data-x="32" data-y="19"></div>
+  <div class="cell thick-b" data-x="33" data-y="19"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="19"><span class="cell-coord">35,20</span></div>
+  <div class="cell thick-b" data-x="35" data-y="19"></div>
+  <div class="cell thick-b" data-x="36" data-y="19"></div>
+  <div class="cell thick-b" data-x="37" data-y="19"></div>
+  <div class="cell thick-b" data-x="38" data-y="19"></div>
+  <div class="cell thick-b" data-x="39" data-y="19"><span class="cell-coord">40,20</span></div>
+  <div class="hint row" id="hhint-20"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="20"></div>
+  <div class="cell" data-x="1" data-y="20"></div>
+  <div class="cell" data-x="2" data-y="20"></div>
+  <div class="cell" data-x="3" data-y="20"></div>
+  <div class="cell thick-r" data-x="4" data-y="20"></div>
+  <div class="cell" data-x="5" data-y="20"></div>
+  <div class="cell" data-x="6" data-y="20"></div>
+  <div class="cell" data-x="7" data-y="20"></div>
+  <div class="cell" data-x="8" data-y="20"></div>
+  <div class="cell thick-r" data-x="9" data-y="20"></div>
+  <div class="cell" data-x="10" data-y="20"></div>
+  <div class="cell" data-x="11" data-y="20"></div>
+  <div class="cell" data-x="12" data-y="20"></div>
+  <div class="cell" data-x="13" data-y="20"></div>
+  <div class="cell thick-r" data-x="14" data-y="20"></div>
+  <div class="cell" data-x="15" data-y="20"></div>
+  <div class="cell" data-x="16" data-y="20"></div>
+  <div class="cell" data-x="17" data-y="20"></div>
+  <div class="cell" data-x="18" data-y="20"></div>
+  <div class="cell thick-r" data-x="19" data-y="20"></div>
+  <div class="cell" data-x="20" data-y="20"></div>
+  <div class="cell" data-x="21" data-y="20"></div>
+  <div class="cell" data-x="22" data-y="20"></div>
+  <div class="cell" data-x="23" data-y="20"></div>
+  <div class="cell thick-r" data-x="24" data-y="20"></div>
+  <div class="cell" data-x="25" data-y="20"></div>
+  <div class="cell" data-x="26" data-y="20"></div>
+  <div class="cell" data-x="27" data-y="20"></div>
+  <div class="cell" data-x="28" data-y="20"></div>
+  <div class="cell thick-r" data-x="29" data-y="20"></div>
+  <div class="cell" data-x="30" data-y="20"></div>
+  <div class="cell" data-x="31" data-y="20"></div>
+  <div class="cell" data-x="32" data-y="20"></div>
+  <div class="cell" data-x="33" data-y="20"></div>
+  <div class="cell thick-r" data-x="34" data-y="20"></div>
+  <div class="cell" data-x="35" data-y="20"></div>
+  <div class="cell" data-x="36" data-y="20"></div>
+  <div class="cell" data-x="37" data-y="20"></div>
+  <div class="cell" data-x="38" data-y="20"></div>
+  <div class="cell" data-x="39" data-y="20"></div>
+  <div class="hint row" id="hhint-21"><span class="hint-span">2</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span></div>
+  <div class="cell" data-x="0" data-y="21"></div>
+  <div class="cell" data-x="1" data-y="21"></div>
+  <div class="cell" data-x="2" data-y="21"></div>
+  <div class="cell" data-x="3" data-y="21"></div>
+  <div class="cell thick-r" data-x="4" data-y="21"></div>
+  <div class="cell" data-x="5" data-y="21"></div>
+  <div class="cell" data-x="6" data-y="21"></div>
+  <div class="cell" data-x="7" data-y="21"></div>
+  <div class="cell" data-x="8" data-y="21"></div>
+  <div class="cell thick-r" data-x="9" data-y="21"></div>
+  <div class="cell" data-x="10" data-y="21"></div>
+  <div class="cell" data-x="11" data-y="21"></div>
+  <div class="cell" data-x="12" data-y="21"></div>
+  <div class="cell" data-x="13" data-y="21"></div>
+  <div class="cell thick-r" data-x="14" data-y="21"></div>
+  <div class="cell" data-x="15" data-y="21"></div>
+  <div class="cell" data-x="16" data-y="21"></div>
+  <div class="cell" data-x="17" data-y="21"></div>
+  <div class="cell" data-x="18" data-y="21"></div>
+  <div class="cell thick-r" data-x="19" data-y="21"></div>
+  <div class="cell" data-x="20" data-y="21"></div>
+  <div class="cell" data-x="21" data-y="21"></div>
+  <div class="cell" data-x="22" data-y="21"></div>
+  <div class="cell" data-x="23" data-y="21"></div>
+  <div class="cell thick-r" data-x="24" data-y="21"></div>
+  <div class="cell" data-x="25" data-y="21"></div>
+  <div class="cell" data-x="26" data-y="21"></div>
+  <div class="cell" data-x="27" data-y="21"></div>
+  <div class="cell" data-x="28" data-y="21"></div>
+  <div class="cell thick-r" data-x="29" data-y="21"></div>
+  <div class="cell" data-x="30" data-y="21"></div>
+  <div class="cell" data-x="31" data-y="21"></div>
+  <div class="cell" data-x="32" data-y="21"></div>
+  <div class="cell" data-x="33" data-y="21"></div>
+  <div class="cell thick-r" data-x="34" data-y="21"></div>
+  <div class="cell" data-x="35" data-y="21"></div>
+  <div class="cell" data-x="36" data-y="21"></div>
+  <div class="cell" data-x="37" data-y="21"></div>
+  <div class="cell" data-x="38" data-y="21"></div>
+  <div class="cell" data-x="39" data-y="21"></div>
+  <div class="hint row" id="hhint-22"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">8</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="22"></div>
+  <div class="cell" data-x="1" data-y="22"></div>
+  <div class="cell" data-x="2" data-y="22"></div>
+  <div class="cell" data-x="3" data-y="22"></div>
+  <div class="cell thick-r" data-x="4" data-y="22"></div>
+  <div class="cell" data-x="5" data-y="22"></div>
+  <div class="cell" data-x="6" data-y="22"></div>
+  <div class="cell" data-x="7" data-y="22"></div>
+  <div class="cell" data-x="8" data-y="22"></div>
+  <div class="cell thick-r" data-x="9" data-y="22"></div>
+  <div class="cell" data-x="10" data-y="22"></div>
+  <div class="cell" data-x="11" data-y="22"></div>
+  <div class="cell" data-x="12" data-y="22"></div>
+  <div class="cell" data-x="13" data-y="22"></div>
+  <div class="cell thick-r" data-x="14" data-y="22"></div>
+  <div class="cell" data-x="15" data-y="22"></div>
+  <div class="cell" data-x="16" data-y="22"></div>
+  <div class="cell" data-x="17" data-y="22"></div>
+  <div class="cell" data-x="18" data-y="22"></div>
+  <div class="cell thick-r" data-x="19" data-y="22"></div>
+  <div class="cell" data-x="20" data-y="22"></div>
+  <div class="cell" data-x="21" data-y="22"></div>
+  <div class="cell" data-x="22" data-y="22"></div>
+  <div class="cell" data-x="23" data-y="22"></div>
+  <div class="cell thick-r" data-x="24" data-y="22"></div>
+  <div class="cell" data-x="25" data-y="22"></div>
+  <div class="cell" data-x="26" data-y="22"></div>
+  <div class="cell" data-x="27" data-y="22"></div>
+  <div class="cell" data-x="28" data-y="22"></div>
+  <div class="cell thick-r" data-x="29" data-y="22"></div>
+  <div class="cell" data-x="30" data-y="22"></div>
+  <div class="cell" data-x="31" data-y="22"></div>
+  <div class="cell" data-x="32" data-y="22"></div>
+  <div class="cell" data-x="33" data-y="22"></div>
+  <div class="cell thick-r" data-x="34" data-y="22"></div>
+  <div class="cell" data-x="35" data-y="22"></div>
+  <div class="cell" data-x="36" data-y="22"></div>
+  <div class="cell" data-x="37" data-y="22"></div>
+  <div class="cell" data-x="38" data-y="22"></div>
+  <div class="cell" data-x="39" data-y="22"></div>
+  <div class="hint row" id="hhint-23"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">12</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="23"></div>
+  <div class="cell" data-x="1" data-y="23"></div>
+  <div class="cell" data-x="2" data-y="23"></div>
+  <div class="cell" data-x="3" data-y="23"></div>
+  <div class="cell thick-r" data-x="4" data-y="23"></div>
+  <div class="cell" data-x="5" data-y="23"></div>
+  <div class="cell" data-x="6" data-y="23"></div>
+  <div class="cell" data-x="7" data-y="23"></div>
+  <div class="cell" data-x="8" data-y="23"></div>
+  <div class="cell thick-r" data-x="9" data-y="23"></div>
+  <div class="cell" data-x="10" data-y="23"></div>
+  <div class="cell" data-x="11" data-y="23"></div>
+  <div class="cell" data-x="12" data-y="23"></div>
+  <div class="cell" data-x="13" data-y="23"></div>
+  <div class="cell thick-r" data-x="14" data-y="23"></div>
+  <div class="cell" data-x="15" data-y="23"></div>
+  <div class="cell" data-x="16" data-y="23"></div>
+  <div class="cell" data-x="17" data-y="23"></div>
+  <div class="cell" data-x="18" data-y="23"></div>
+  <div class="cell thick-r" data-x="19" data-y="23"></div>
+  <div class="cell" data-x="20" data-y="23"></div>
+  <div class="cell" data-x="21" data-y="23"></div>
+  <div class="cell" data-x="22" data-y="23"></div>
+  <div class="cell" data-x="23" data-y="23"></div>
+  <div class="cell thick-r" data-x="24" data-y="23"></div>
+  <div class="cell" data-x="25" data-y="23"></div>
+  <div class="cell" data-x="26" data-y="23"></div>
+  <div class="cell" data-x="27" data-y="23"></div>
+  <div class="cell" data-x="28" data-y="23"></div>
+  <div class="cell thick-r" data-x="29" data-y="23"></div>
+  <div class="cell" data-x="30" data-y="23"></div>
+  <div class="cell" data-x="31" data-y="23"></div>
+  <div class="cell" data-x="32" data-y="23"></div>
+  <div class="cell" data-x="33" data-y="23"></div>
+  <div class="cell thick-r" data-x="34" data-y="23"></div>
+  <div class="cell" data-x="35" data-y="23"></div>
+  <div class="cell" data-x="36" data-y="23"></div>
+  <div class="cell" data-x="37" data-y="23"></div>
+  <div class="cell" data-x="38" data-y="23"></div>
+  <div class="cell" data-x="39" data-y="23"></div>
+  <div class="hint row thick-b" id="hhint-24"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">5</span><span class="hint-span">5</span><span
+      class="hint-span">2</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell thick-b" data-x="0" data-y="24"></div>
+  <div class="cell thick-b" data-x="1" data-y="24"></div>
+  <div class="cell thick-b" data-x="2" data-y="24"></div>
+  <div class="cell thick-b" data-x="3" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="24"><span class="cell-coord">5,25</span></div>
+  <div class="cell thick-b" data-x="5" data-y="24"></div>
+  <div class="cell thick-b" data-x="6" data-y="24"></div>
+  <div class="cell thick-b" data-x="7" data-y="24"></div>
+  <div class="cell thick-b" data-x="8" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="24"><span class="cell-coord">10,25</span></div>
+  <div class="cell thick-b" data-x="10" data-y="24"></div>
+  <div class="cell thick-b" data-x="11" data-y="24"></div>
+  <div class="cell thick-b" data-x="12" data-y="24"></div>
+  <div class="cell thick-b" data-x="13" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="24"><span class="cell-coord">15,25</span></div>
+  <div class="cell thick-b" data-x="15" data-y="24"></div>
+  <div class="cell thick-b" data-x="16" data-y="24"></div>
+  <div class="cell thick-b" data-x="17" data-y="24"></div>
+  <div class="cell thick-b" data-x="18" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="24"><span class="cell-coord">20,25</span></div>
+  <div class="cell thick-b" data-x="20" data-y="24"></div>
+  <div class="cell thick-b" data-x="21" data-y="24"></div>
+  <div class="cell thick-b" data-x="22" data-y="24"></div>
+  <div class="cell thick-b" data-x="23" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="24"><span class="cell-coord">25,25</span></div>
+  <div class="cell thick-b" data-x="25" data-y="24"></div>
+  <div class="cell thick-b" data-x="26" data-y="24"></div>
+  <div class="cell thick-b" data-x="27" data-y="24"></div>
+  <div class="cell thick-b" data-x="28" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="24"><span class="cell-coord">30,25</span></div>
+  <div class="cell thick-b" data-x="30" data-y="24"></div>
+  <div class="cell thick-b" data-x="31" data-y="24"></div>
+  <div class="cell thick-b" data-x="32" data-y="24"></div>
+  <div class="cell thick-b" data-x="33" data-y="24"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="24"><span class="cell-coord">35,25</span></div>
+  <div class="cell thick-b" data-x="35" data-y="24"></div>
+  <div class="cell thick-b" data-x="36" data-y="24"></div>
+  <div class="cell thick-b" data-x="37" data-y="24"></div>
+  <div class="cell thick-b" data-x="38" data-y="24"></div>
+  <div class="cell thick-b" data-x="39" data-y="24"><span class="cell-coord">40,25</span></div>
+  <div class="hint row" id="hhint-25"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">6</span><span class="hint-span">6</span><span class="hint-span">1</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="25"></div>
+  <div class="cell" data-x="1" data-y="25"></div>
+  <div class="cell" data-x="2" data-y="25"></div>
+  <div class="cell" data-x="3" data-y="25"></div>
+  <div class="cell thick-r" data-x="4" data-y="25"></div>
+  <div class="cell" data-x="5" data-y="25"></div>
+  <div class="cell" data-x="6" data-y="25"></div>
+  <div class="cell" data-x="7" data-y="25"></div>
+  <div class="cell" data-x="8" data-y="25"></div>
+  <div class="cell thick-r" data-x="9" data-y="25"></div>
+  <div class="cell" data-x="10" data-y="25"></div>
+  <div class="cell" data-x="11" data-y="25"></div>
+  <div class="cell" data-x="12" data-y="25"></div>
+  <div class="cell" data-x="13" data-y="25"></div>
+  <div class="cell thick-r" data-x="14" data-y="25"></div>
+  <div class="cell" data-x="15" data-y="25"></div>
+  <div class="cell" data-x="16" data-y="25"></div>
+  <div class="cell" data-x="17" data-y="25"></div>
+  <div class="cell" data-x="18" data-y="25"></div>
+  <div class="cell thick-r" data-x="19" data-y="25"></div>
+  <div class="cell" data-x="20" data-y="25"></div>
+  <div class="cell" data-x="21" data-y="25"></div>
+  <div class="cell" data-x="22" data-y="25"></div>
+  <div class="cell" data-x="23" data-y="25"></div>
+  <div class="cell thick-r" data-x="24" data-y="25"></div>
+  <div class="cell" data-x="25" data-y="25"></div>
+  <div class="cell" data-x="26" data-y="25"></div>
+  <div class="cell" data-x="27" data-y="25"></div>
+  <div class="cell" data-x="28" data-y="25"></div>
+  <div class="cell thick-r" data-x="29" data-y="25"></div>
+  <div class="cell" data-x="30" data-y="25"></div>
+  <div class="cell" data-x="31" data-y="25"></div>
+  <div class="cell" data-x="32" data-y="25"></div>
+  <div class="cell" data-x="33" data-y="25"></div>
+  <div class="cell thick-r" data-x="34" data-y="25"></div>
+  <div class="cell" data-x="35" data-y="25"></div>
+  <div class="cell" data-x="36" data-y="25"></div>
+  <div class="cell" data-x="37" data-y="25"></div>
+  <div class="cell" data-x="38" data-y="25"></div>
+  <div class="cell" data-x="39" data-y="25"></div>
+  <div class="hint row" id="hhint-26"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="26"></div>
+  <div class="cell" data-x="1" data-y="26"></div>
+  <div class="cell" data-x="2" data-y="26"></div>
+  <div class="cell" data-x="3" data-y="26"></div>
+  <div class="cell thick-r" data-x="4" data-y="26"></div>
+  <div class="cell" data-x="5" data-y="26"></div>
+  <div class="cell" data-x="6" data-y="26"></div>
+  <div class="cell" data-x="7" data-y="26"></div>
+  <div class="cell" data-x="8" data-y="26"></div>
+  <div class="cell thick-r" data-x="9" data-y="26"></div>
+  <div class="cell" data-x="10" data-y="26"></div>
+  <div class="cell" data-x="11" data-y="26"></div>
+  <div class="cell" data-x="12" data-y="26"></div>
+  <div class="cell" data-x="13" data-y="26"></div>
+  <div class="cell thick-r" data-x="14" data-y="26"></div>
+  <div class="cell" data-x="15" data-y="26"></div>
+  <div class="cell" data-x="16" data-y="26"></div>
+  <div class="cell" data-x="17" data-y="26"></div>
+  <div class="cell" data-x="18" data-y="26"></div>
+  <div class="cell thick-r" data-x="19" data-y="26"></div>
+  <div class="cell" data-x="20" data-y="26"></div>
+  <div class="cell" data-x="21" data-y="26"></div>
+  <div class="cell" data-x="22" data-y="26"></div>
+  <div class="cell" data-x="23" data-y="26"></div>
+  <div class="cell thick-r" data-x="24" data-y="26"></div>
+  <div class="cell" data-x="25" data-y="26"></div>
+  <div class="cell" data-x="26" data-y="26"></div>
+  <div class="cell" data-x="27" data-y="26"></div>
+  <div class="cell" data-x="28" data-y="26"></div>
+  <div class="cell thick-r" data-x="29" data-y="26"></div>
+  <div class="cell" data-x="30" data-y="26"></div>
+  <div class="cell" data-x="31" data-y="26"></div>
+  <div class="cell" data-x="32" data-y="26"></div>
+  <div class="cell" data-x="33" data-y="26"></div>
+  <div class="cell thick-r" data-x="34" data-y="26"></div>
+  <div class="cell" data-x="35" data-y="26"></div>
+  <div class="cell" data-x="36" data-y="26"></div>
+  <div class="cell" data-x="37" data-y="26"></div>
+  <div class="cell" data-x="38" data-y="26"></div>
+  <div class="cell" data-x="39" data-y="26"></div>
+  <div class="hint row" id="hhint-27"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="27"></div>
+  <div class="cell" data-x="1" data-y="27"></div>
+  <div class="cell" data-x="2" data-y="27"></div>
+  <div class="cell" data-x="3" data-y="27"></div>
+  <div class="cell thick-r" data-x="4" data-y="27"></div>
+  <div class="cell" data-x="5" data-y="27"></div>
+  <div class="cell" data-x="6" data-y="27"></div>
+  <div class="cell" data-x="7" data-y="27"></div>
+  <div class="cell" data-x="8" data-y="27"></div>
+  <div class="cell thick-r" data-x="9" data-y="27"></div>
+  <div class="cell" data-x="10" data-y="27"></div>
+  <div class="cell" data-x="11" data-y="27"></div>
+  <div class="cell" data-x="12" data-y="27"></div>
+  <div class="cell" data-x="13" data-y="27"></div>
+  <div class="cell thick-r" data-x="14" data-y="27"></div>
+  <div class="cell" data-x="15" data-y="27"></div>
+  <div class="cell" data-x="16" data-y="27"></div>
+  <div class="cell" data-x="17" data-y="27"></div>
+  <div class="cell" data-x="18" data-y="27"></div>
+  <div class="cell thick-r" data-x="19" data-y="27"></div>
+  <div class="cell" data-x="20" data-y="27"></div>
+  <div class="cell" data-x="21" data-y="27"></div>
+  <div class="cell" data-x="22" data-y="27"></div>
+  <div class="cell" data-x="23" data-y="27"></div>
+  <div class="cell thick-r" data-x="24" data-y="27"></div>
+  <div class="cell" data-x="25" data-y="27"></div>
+  <div class="cell" data-x="26" data-y="27"></div>
+  <div class="cell" data-x="27" data-y="27"></div>
+  <div class="cell" data-x="28" data-y="27"></div>
+  <div class="cell thick-r" data-x="29" data-y="27"></div>
+  <div class="cell" data-x="30" data-y="27"></div>
+  <div class="cell" data-x="31" data-y="27"></div>
+  <div class="cell" data-x="32" data-y="27"></div>
+  <div class="cell" data-x="33" data-y="27"></div>
+  <div class="cell thick-r" data-x="34" data-y="27"></div>
+  <div class="cell" data-x="35" data-y="27"></div>
+  <div class="cell" data-x="36" data-y="27"></div>
+  <div class="cell" data-x="37" data-y="27"></div>
+  <div class="cell" data-x="38" data-y="27"></div>
+  <div class="cell" data-x="39" data-y="27"></div>
+  <div class="hint row" id="hhint-28"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="28"></div>
+  <div class="cell" data-x="1" data-y="28"></div>
+  <div class="cell" data-x="2" data-y="28"></div>
+  <div class="cell" data-x="3" data-y="28"></div>
+  <div class="cell thick-r" data-x="4" data-y="28"></div>
+  <div class="cell" data-x="5" data-y="28"></div>
+  <div class="cell" data-x="6" data-y="28"></div>
+  <div class="cell" data-x="7" data-y="28"></div>
+  <div class="cell" data-x="8" data-y="28"></div>
+  <div class="cell thick-r" data-x="9" data-y="28"></div>
+  <div class="cell" data-x="10" data-y="28"></div>
+  <div class="cell" data-x="11" data-y="28"></div>
+  <div class="cell" data-x="12" data-y="28"></div>
+  <div class="cell" data-x="13" data-y="28"></div>
+  <div class="cell thick-r" data-x="14" data-y="28"></div>
+  <div class="cell" data-x="15" data-y="28"></div>
+  <div class="cell" data-x="16" data-y="28"></div>
+  <div class="cell" data-x="17" data-y="28"></div>
+  <div class="cell" data-x="18" data-y="28"></div>
+  <div class="cell thick-r" data-x="19" data-y="28"></div>
+  <div class="cell" data-x="20" data-y="28"></div>
+  <div class="cell" data-x="21" data-y="28"></div>
+  <div class="cell" data-x="22" data-y="28"></div>
+  <div class="cell" data-x="23" data-y="28"></div>
+  <div class="cell thick-r" data-x="24" data-y="28"></div>
+  <div class="cell" data-x="25" data-y="28"></div>
+  <div class="cell" data-x="26" data-y="28"></div>
+  <div class="cell" data-x="27" data-y="28"></div>
+  <div class="cell" data-x="28" data-y="28"></div>
+  <div class="cell thick-r" data-x="29" data-y="28"></div>
+  <div class="cell" data-x="30" data-y="28"></div>
+  <div class="cell" data-x="31" data-y="28"></div>
+  <div class="cell" data-x="32" data-y="28"></div>
+  <div class="cell" data-x="33" data-y="28"></div>
+  <div class="cell thick-r" data-x="34" data-y="28"></div>
+  <div class="cell" data-x="35" data-y="28"></div>
+  <div class="cell" data-x="36" data-y="28"></div>
+  <div class="cell" data-x="37" data-y="28"></div>
+  <div class="cell" data-x="38" data-y="28"></div>
+  <div class="cell" data-x="39" data-y="28"></div>
+  <div class="hint row thick-b" id="hhint-29"><span class="hint-span">1</span><span class="hint-span">3</span><span
+      class="hint-span">3</span><span class="hint-span">3</span><span class="hint-span">3</span><span
+      class="hint-span">1</span></div>
+  <div class="cell thick-b" data-x="0" data-y="29"></div>
+  <div class="cell thick-b" data-x="1" data-y="29"></div>
+  <div class="cell thick-b" data-x="2" data-y="29"></div>
+  <div class="cell thick-b" data-x="3" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="29"><span class="cell-coord">5,30</span></div>
+  <div class="cell thick-b" data-x="5" data-y="29"></div>
+  <div class="cell thick-b" data-x="6" data-y="29"></div>
+  <div class="cell thick-b" data-x="7" data-y="29"></div>
+  <div class="cell thick-b" data-x="8" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="29"><span class="cell-coord">10,30</span></div>
+  <div class="cell thick-b" data-x="10" data-y="29"></div>
+  <div class="cell thick-b" data-x="11" data-y="29"></div>
+  <div class="cell thick-b" data-x="12" data-y="29"></div>
+  <div class="cell thick-b" data-x="13" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="29"><span class="cell-coord">15,30</span></div>
+  <div class="cell thick-b" data-x="15" data-y="29"></div>
+  <div class="cell thick-b" data-x="16" data-y="29"></div>
+  <div class="cell thick-b" data-x="17" data-y="29"></div>
+  <div class="cell thick-b" data-x="18" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="29"><span class="cell-coord">20,30</span></div>
+  <div class="cell thick-b" data-x="20" data-y="29"></div>
+  <div class="cell thick-b" data-x="21" data-y="29"></div>
+  <div class="cell thick-b" data-x="22" data-y="29"></div>
+  <div class="cell thick-b" data-x="23" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="29"><span class="cell-coord">25,30</span></div>
+  <div class="cell thick-b" data-x="25" data-y="29"></div>
+  <div class="cell thick-b" data-x="26" data-y="29"></div>
+  <div class="cell thick-b" data-x="27" data-y="29"></div>
+  <div class="cell thick-b" data-x="28" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="29"><span class="cell-coord">30,30</span></div>
+  <div class="cell thick-b" data-x="30" data-y="29"></div>
+  <div class="cell thick-b" data-x="31" data-y="29"></div>
+  <div class="cell thick-b" data-x="32" data-y="29"></div>
+  <div class="cell thick-b" data-x="33" data-y="29"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="29"><span class="cell-coord">35,30</span></div>
+  <div class="cell thick-b" data-x="35" data-y="29"></div>
+  <div class="cell thick-b" data-x="36" data-y="29"></div>
+  <div class="cell thick-b" data-x="37" data-y="29"></div>
+  <div class="cell thick-b" data-x="38" data-y="29"></div>
+  <div class="cell thick-b" data-x="39" data-y="29"><span class="cell-coord">40,30</span></div>
+  <div class="hint row" id="hhint-30"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">2</span><span class="hint-span">3</span><span class="hint-span">3</span><span
+      class="hint-span">2</span><span class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="30"></div>
+  <div class="cell" data-x="1" data-y="30"></div>
+  <div class="cell" data-x="2" data-y="30"></div>
+  <div class="cell" data-x="3" data-y="30"></div>
+  <div class="cell thick-r" data-x="4" data-y="30"></div>
+  <div class="cell" data-x="5" data-y="30"></div>
+  <div class="cell" data-x="6" data-y="30"></div>
+  <div class="cell" data-x="7" data-y="30"></div>
+  <div class="cell" data-x="8" data-y="30"></div>
+  <div class="cell thick-r" data-x="9" data-y="30"></div>
+  <div class="cell" data-x="10" data-y="30"></div>
+  <div class="cell" data-x="11" data-y="30"></div>
+  <div class="cell" data-x="12" data-y="30"></div>
+  <div class="cell" data-x="13" data-y="30"></div>
+  <div class="cell thick-r" data-x="14" data-y="30"></div>
+  <div class="cell" data-x="15" data-y="30"></div>
+  <div class="cell" data-x="16" data-y="30"></div>
+  <div class="cell" data-x="17" data-y="30"></div>
+  <div class="cell" data-x="18" data-y="30"></div>
+  <div class="cell thick-r" data-x="19" data-y="30"></div>
+  <div class="cell" data-x="20" data-y="30"></div>
+  <div class="cell" data-x="21" data-y="30"></div>
+  <div class="cell" data-x="22" data-y="30"></div>
+  <div class="cell" data-x="23" data-y="30"></div>
+  <div class="cell thick-r" data-x="24" data-y="30"></div>
+  <div class="cell" data-x="25" data-y="30"></div>
+  <div class="cell" data-x="26" data-y="30"></div>
+  <div class="cell" data-x="27" data-y="30"></div>
+  <div class="cell" data-x="28" data-y="30"></div>
+  <div class="cell thick-r" data-x="29" data-y="30"></div>
+  <div class="cell" data-x="30" data-y="30"></div>
+  <div class="cell" data-x="31" data-y="30"></div>
+  <div class="cell" data-x="32" data-y="30"></div>
+  <div class="cell" data-x="33" data-y="30"></div>
+  <div class="cell thick-r" data-x="34" data-y="30"></div>
+  <div class="cell" data-x="35" data-y="30"></div>
+  <div class="cell" data-x="36" data-y="30"></div>
+  <div class="cell" data-x="37" data-y="30"></div>
+  <div class="cell" data-x="38" data-y="30"></div>
+  <div class="cell" data-x="39" data-y="30"></div>
+  <div class="hint row" id="hhint-31"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">2</span><span class="hint-span">14</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="31"></div>
+  <div class="cell" data-x="1" data-y="31"></div>
+  <div class="cell" data-x="2" data-y="31"></div>
+  <div class="cell" data-x="3" data-y="31"></div>
+  <div class="cell thick-r" data-x="4" data-y="31"></div>
+  <div class="cell" data-x="5" data-y="31"></div>
+  <div class="cell" data-x="6" data-y="31"></div>
+  <div class="cell" data-x="7" data-y="31"></div>
+  <div class="cell" data-x="8" data-y="31"></div>
+  <div class="cell thick-r" data-x="9" data-y="31"></div>
+  <div class="cell" data-x="10" data-y="31"></div>
+  <div class="cell" data-x="11" data-y="31"></div>
+  <div class="cell" data-x="12" data-y="31"></div>
+  <div class="cell" data-x="13" data-y="31"></div>
+  <div class="cell thick-r" data-x="14" data-y="31"></div>
+  <div class="cell" data-x="15" data-y="31"></div>
+  <div class="cell" data-x="16" data-y="31"></div>
+  <div class="cell" data-x="17" data-y="31"></div>
+  <div class="cell" data-x="18" data-y="31"></div>
+  <div class="cell thick-r" data-x="19" data-y="31"></div>
+  <div class="cell" data-x="20" data-y="31"></div>
+  <div class="cell" data-x="21" data-y="31"></div>
+  <div class="cell" data-x="22" data-y="31"></div>
+  <div class="cell" data-x="23" data-y="31"></div>
+  <div class="cell thick-r" data-x="24" data-y="31"></div>
+  <div class="cell" data-x="25" data-y="31"></div>
+  <div class="cell" data-x="26" data-y="31"></div>
+  <div class="cell" data-x="27" data-y="31"></div>
+  <div class="cell" data-x="28" data-y="31"></div>
+  <div class="cell thick-r" data-x="29" data-y="31"></div>
+  <div class="cell" data-x="30" data-y="31"></div>
+  <div class="cell" data-x="31" data-y="31"></div>
+  <div class="cell" data-x="32" data-y="31"></div>
+  <div class="cell" data-x="33" data-y="31"></div>
+  <div class="cell thick-r" data-x="34" data-y="31"></div>
+  <div class="cell" data-x="35" data-y="31"></div>
+  <div class="cell" data-x="36" data-y="31"></div>
+  <div class="cell" data-x="37" data-y="31"></div>
+  <div class="cell" data-x="38" data-y="31"></div>
+  <div class="cell" data-x="39" data-y="31"></div>
+  <div class="hint row" id="hhint-32"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">3</span><span class="hint-span">12</span><span class="hint-span">3</span><span
+      class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="32"></div>
+  <div class="cell" data-x="1" data-y="32"></div>
+  <div class="cell" data-x="2" data-y="32"></div>
+  <div class="cell" data-x="3" data-y="32"></div>
+  <div class="cell thick-r" data-x="4" data-y="32"></div>
+  <div class="cell" data-x="5" data-y="32"></div>
+  <div class="cell" data-x="6" data-y="32"></div>
+  <div class="cell" data-x="7" data-y="32"></div>
+  <div class="cell" data-x="8" data-y="32"></div>
+  <div class="cell thick-r" data-x="9" data-y="32"></div>
+  <div class="cell" data-x="10" data-y="32"></div>
+  <div class="cell" data-x="11" data-y="32"></div>
+  <div class="cell" data-x="12" data-y="32"></div>
+  <div class="cell" data-x="13" data-y="32"></div>
+  <div class="cell thick-r" data-x="14" data-y="32"></div>
+  <div class="cell" data-x="15" data-y="32"></div>
+  <div class="cell" data-x="16" data-y="32"></div>
+  <div class="cell" data-x="17" data-y="32"></div>
+  <div class="cell" data-x="18" data-y="32"></div>
+  <div class="cell thick-r" data-x="19" data-y="32"></div>
+  <div class="cell" data-x="20" data-y="32"></div>
+  <div class="cell" data-x="21" data-y="32"></div>
+  <div class="cell" data-x="22" data-y="32"></div>
+  <div class="cell" data-x="23" data-y="32"></div>
+  <div class="cell thick-r" data-x="24" data-y="32"></div>
+  <div class="cell" data-x="25" data-y="32"></div>
+  <div class="cell" data-x="26" data-y="32"></div>
+  <div class="cell" data-x="27" data-y="32"></div>
+  <div class="cell" data-x="28" data-y="32"></div>
+  <div class="cell thick-r" data-x="29" data-y="32"></div>
+  <div class="cell" data-x="30" data-y="32"></div>
+  <div class="cell" data-x="31" data-y="32"></div>
+  <div class="cell" data-x="32" data-y="32"></div>
+  <div class="cell" data-x="33" data-y="32"></div>
+  <div class="cell thick-r" data-x="34" data-y="32"></div>
+  <div class="cell" data-x="35" data-y="32"></div>
+  <div class="cell" data-x="36" data-y="32"></div>
+  <div class="cell" data-x="37" data-y="32"></div>
+  <div class="cell" data-x="38" data-y="32"></div>
+  <div class="cell" data-x="39" data-y="32"></div>
+  <div class="hint row" id="hhint-33"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">6</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="33"></div>
+  <div class="cell" data-x="1" data-y="33"></div>
+  <div class="cell" data-x="2" data-y="33"></div>
+  <div class="cell" data-x="3" data-y="33"></div>
+  <div class="cell thick-r" data-x="4" data-y="33"></div>
+  <div class="cell" data-x="5" data-y="33"></div>
+  <div class="cell" data-x="6" data-y="33"></div>
+  <div class="cell" data-x="7" data-y="33"></div>
+  <div class="cell" data-x="8" data-y="33"></div>
+  <div class="cell thick-r" data-x="9" data-y="33"></div>
+  <div class="cell" data-x="10" data-y="33"></div>
+  <div class="cell" data-x="11" data-y="33"></div>
+  <div class="cell" data-x="12" data-y="33"></div>
+  <div class="cell" data-x="13" data-y="33"></div>
+  <div class="cell thick-r" data-x="14" data-y="33"></div>
+  <div class="cell" data-x="15" data-y="33"></div>
+  <div class="cell" data-x="16" data-y="33"></div>
+  <div class="cell" data-x="17" data-y="33"></div>
+  <div class="cell" data-x="18" data-y="33"></div>
+  <div class="cell thick-r" data-x="19" data-y="33"></div>
+  <div class="cell" data-x="20" data-y="33"></div>
+  <div class="cell" data-x="21" data-y="33"></div>
+  <div class="cell" data-x="22" data-y="33"></div>
+  <div class="cell" data-x="23" data-y="33"></div>
+  <div class="cell thick-r" data-x="24" data-y="33"></div>
+  <div class="cell" data-x="25" data-y="33"></div>
+  <div class="cell" data-x="26" data-y="33"></div>
+  <div class="cell" data-x="27" data-y="33"></div>
+  <div class="cell" data-x="28" data-y="33"></div>
+  <div class="cell thick-r" data-x="29" data-y="33"></div>
+  <div class="cell" data-x="30" data-y="33"></div>
+  <div class="cell" data-x="31" data-y="33"></div>
+  <div class="cell" data-x="32" data-y="33"></div>
+  <div class="cell" data-x="33" data-y="33"></div>
+  <div class="cell thick-r" data-x="34" data-y="33"></div>
+  <div class="cell" data-x="35" data-y="33"></div>
+  <div class="cell" data-x="36" data-y="33"></div>
+  <div class="cell" data-x="37" data-y="33"></div>
+  <div class="cell" data-x="38" data-y="33"></div>
+  <div class="cell" data-x="39" data-y="33"></div>
+  <div class="hint row thick-b" id="hhint-34"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell thick-b" data-x="0" data-y="34"></div>
+  <div class="cell thick-b" data-x="1" data-y="34"></div>
+  <div class="cell thick-b" data-x="2" data-y="34"></div>
+  <div class="cell thick-b" data-x="3" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="4" data-y="34"><span class="cell-coord">5,35</span></div>
+  <div class="cell thick-b" data-x="5" data-y="34"></div>
+  <div class="cell thick-b" data-x="6" data-y="34"></div>
+  <div class="cell thick-b" data-x="7" data-y="34"></div>
+  <div class="cell thick-b" data-x="8" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="9" data-y="34"><span class="cell-coord">10,35</span></div>
+  <div class="cell thick-b" data-x="10" data-y="34"></div>
+  <div class="cell thick-b" data-x="11" data-y="34"></div>
+  <div class="cell thick-b" data-x="12" data-y="34"></div>
+  <div class="cell thick-b" data-x="13" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="14" data-y="34"><span class="cell-coord">15,35</span></div>
+  <div class="cell thick-b" data-x="15" data-y="34"></div>
+  <div class="cell thick-b" data-x="16" data-y="34"></div>
+  <div class="cell thick-b" data-x="17" data-y="34"></div>
+  <div class="cell thick-b" data-x="18" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="19" data-y="34"><span class="cell-coord">20,35</span></div>
+  <div class="cell thick-b" data-x="20" data-y="34"></div>
+  <div class="cell thick-b" data-x="21" data-y="34"></div>
+  <div class="cell thick-b" data-x="22" data-y="34"></div>
+  <div class="cell thick-b" data-x="23" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="24" data-y="34"><span class="cell-coord">25,35</span></div>
+  <div class="cell thick-b" data-x="25" data-y="34"></div>
+  <div class="cell thick-b" data-x="26" data-y="34"></div>
+  <div class="cell thick-b" data-x="27" data-y="34"></div>
+  <div class="cell thick-b" data-x="28" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="29" data-y="34"><span class="cell-coord">30,35</span></div>
+  <div class="cell thick-b" data-x="30" data-y="34"></div>
+  <div class="cell thick-b" data-x="31" data-y="34"></div>
+  <div class="cell thick-b" data-x="32" data-y="34"></div>
+  <div class="cell thick-b" data-x="33" data-y="34"></div>
+  <div class="cell thick-r thick-b" data-x="34" data-y="34"><span class="cell-coord">35,35</span></div>
+  <div class="cell thick-b" data-x="35" data-y="34"></div>
+  <div class="cell thick-b" data-x="36" data-y="34"></div>
+  <div class="cell thick-b" data-x="37" data-y="34"></div>
+  <div class="cell thick-b" data-x="38" data-y="34"></div>
+  <div class="cell thick-b" data-x="39" data-y="34"><span class="cell-coord">40,35</span></div>
+  <div class="hint row" id="hhint-35"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="35"></div>
+  <div class="cell" data-x="1" data-y="35"></div>
+  <div class="cell" data-x="2" data-y="35"></div>
+  <div class="cell" data-x="3" data-y="35"></div>
+  <div class="cell thick-r" data-x="4" data-y="35"></div>
+  <div class="cell" data-x="5" data-y="35"></div>
+  <div class="cell" data-x="6" data-y="35"></div>
+  <div class="cell" data-x="7" data-y="35"></div>
+  <div class="cell" data-x="8" data-y="35"></div>
+  <div class="cell thick-r" data-x="9" data-y="35"></div>
+  <div class="cell" data-x="10" data-y="35"></div>
+  <div class="cell" data-x="11" data-y="35"></div>
+  <div class="cell" data-x="12" data-y="35"></div>
+  <div class="cell" data-x="13" data-y="35"></div>
+  <div class="cell thick-r" data-x="14" data-y="35"></div>
+  <div class="cell" data-x="15" data-y="35"></div>
+  <div class="cell" data-x="16" data-y="35"></div>
+  <div class="cell" data-x="17" data-y="35"></div>
+  <div class="cell" data-x="18" data-y="35"></div>
+  <div class="cell thick-r" data-x="19" data-y="35"></div>
+  <div class="cell" data-x="20" data-y="35"></div>
+  <div class="cell" data-x="21" data-y="35"></div>
+  <div class="cell" data-x="22" data-y="35"></div>
+  <div class="cell" data-x="23" data-y="35"></div>
+  <div class="cell thick-r" data-x="24" data-y="35"></div>
+  <div class="cell" data-x="25" data-y="35"></div>
+  <div class="cell" data-x="26" data-y="35"></div>
+  <div class="cell" data-x="27" data-y="35"></div>
+  <div class="cell" data-x="28" data-y="35"></div>
+  <div class="cell thick-r" data-x="29" data-y="35"></div>
+  <div class="cell" data-x="30" data-y="35"></div>
+  <div class="cell" data-x="31" data-y="35"></div>
+  <div class="cell" data-x="32" data-y="35"></div>
+  <div class="cell" data-x="33" data-y="35"></div>
+  <div class="cell thick-r" data-x="34" data-y="35"></div>
+  <div class="cell" data-x="35" data-y="35"></div>
+  <div class="cell" data-x="36" data-y="35"></div>
+  <div class="cell" data-x="37" data-y="35"></div>
+  <div class="cell" data-x="38" data-y="35"></div>
+  <div class="cell" data-x="39" data-y="35"></div>
+  <div class="hint row" id="hhint-36"><span class="hint-span">1</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="36"></div>
+  <div class="cell" data-x="1" data-y="36"></div>
+  <div class="cell" data-x="2" data-y="36"></div>
+  <div class="cell" data-x="3" data-y="36"></div>
+  <div class="cell thick-r" data-x="4" data-y="36"></div>
+  <div class="cell" data-x="5" data-y="36"></div>
+  <div class="cell" data-x="6" data-y="36"></div>
+  <div class="cell" data-x="7" data-y="36"></div>
+  <div class="cell" data-x="8" data-y="36"></div>
+  <div class="cell thick-r" data-x="9" data-y="36"></div>
+  <div class="cell" data-x="10" data-y="36"></div>
+  <div class="cell" data-x="11" data-y="36"></div>
+  <div class="cell" data-x="12" data-y="36"></div>
+  <div class="cell" data-x="13" data-y="36"></div>
+  <div class="cell thick-r" data-x="14" data-y="36"></div>
+  <div class="cell" data-x="15" data-y="36"></div>
+  <div class="cell" data-x="16" data-y="36"></div>
+  <div class="cell" data-x="17" data-y="36"></div>
+  <div class="cell" data-x="18" data-y="36"></div>
+  <div class="cell thick-r" data-x="19" data-y="36"></div>
+  <div class="cell" data-x="20" data-y="36"></div>
+  <div class="cell" data-x="21" data-y="36"></div>
+  <div class="cell" data-x="22" data-y="36"></div>
+  <div class="cell" data-x="23" data-y="36"></div>
+  <div class="cell thick-r" data-x="24" data-y="36"></div>
+  <div class="cell" data-x="25" data-y="36"></div>
+  <div class="cell" data-x="26" data-y="36"></div>
+  <div class="cell" data-x="27" data-y="36"></div>
+  <div class="cell" data-x="28" data-y="36"></div>
+  <div class="cell thick-r" data-x="29" data-y="36"></div>
+  <div class="cell" data-x="30" data-y="36"></div>
+  <div class="cell" data-x="31" data-y="36"></div>
+  <div class="cell" data-x="32" data-y="36"></div>
+  <div class="cell" data-x="33" data-y="36"></div>
+  <div class="cell thick-r" data-x="34" data-y="36"></div>
+  <div class="cell" data-x="35" data-y="36"></div>
+  <div class="cell" data-x="36" data-y="36"></div>
+  <div class="cell" data-x="37" data-y="36"></div>
+  <div class="cell" data-x="38" data-y="36"></div>
+  <div class="cell" data-x="39" data-y="36"></div>
+  <div class="hint row" id="hhint-37"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="37"></div>
+  <div class="cell" data-x="1" data-y="37"></div>
+  <div class="cell" data-x="2" data-y="37"></div>
+  <div class="cell" data-x="3" data-y="37"></div>
+  <div class="cell thick-r" data-x="4" data-y="37"></div>
+  <div class="cell" data-x="5" data-y="37"></div>
+  <div class="cell" data-x="6" data-y="37"></div>
+  <div class="cell" data-x="7" data-y="37"></div>
+  <div class="cell" data-x="8" data-y="37"></div>
+  <div class="cell thick-r" data-x="9" data-y="37"></div>
+  <div class="cell" data-x="10" data-y="37"></div>
+  <div class="cell" data-x="11" data-y="37"></div>
+  <div class="cell" data-x="12" data-y="37"></div>
+  <div class="cell" data-x="13" data-y="37"></div>
+  <div class="cell thick-r" data-x="14" data-y="37"></div>
+  <div class="cell" data-x="15" data-y="37"></div>
+  <div class="cell" data-x="16" data-y="37"></div>
+  <div class="cell" data-x="17" data-y="37"></div>
+  <div class="cell" data-x="18" data-y="37"></div>
+  <div class="cell thick-r" data-x="19" data-y="37"></div>
+  <div class="cell" data-x="20" data-y="37"></div>
+  <div class="cell" data-x="21" data-y="37"></div>
+  <div class="cell" data-x="22" data-y="37"></div>
+  <div class="cell" data-x="23" data-y="37"></div>
+  <div class="cell thick-r" data-x="24" data-y="37"></div>
+  <div class="cell" data-x="25" data-y="37"></div>
+  <div class="cell" data-x="26" data-y="37"></div>
+  <div class="cell" data-x="27" data-y="37"></div>
+  <div class="cell" data-x="28" data-y="37"></div>
+  <div class="cell thick-r" data-x="29" data-y="37"></div>
+  <div class="cell" data-x="30" data-y="37"></div>
+  <div class="cell" data-x="31" data-y="37"></div>
+  <div class="cell" data-x="32" data-y="37"></div>
+  <div class="cell" data-x="33" data-y="37"></div>
+  <div class="cell thick-r" data-x="34" data-y="37"></div>
+  <div class="cell" data-x="35" data-y="37"></div>
+  <div class="cell" data-x="36" data-y="37"></div>
+  <div class="cell" data-x="37" data-y="37"></div>
+  <div class="cell" data-x="38" data-y="37"></div>
+  <div class="cell" data-x="39" data-y="37"></div>
+  <div class="hint row" id="hhint-38"><span class="hint-span">1</span><span class="hint-span">1</span><span
+      class="hint-span">1</span><span class="hint-span">2</span><span class="hint-span">2</span><span
+      class="hint-span">1</span><span class="hint-span">1</span><span class="hint-span">1</span></div>
+  <div class="cell" data-x="0" data-y="38"></div>
+  <div class="cell" data-x="1" data-y="38"></div>
+  <div class="cell" data-x="2" data-y="38"></div>
+  <div class="cell" data-x="3" data-y="38"></div>
+  <div class="cell thick-r" data-x="4" data-y="38"></div>
+  <div class="cell" data-x="5" data-y="38"></div>
+  <div class="cell" data-x="6" data-y="38"></div>
+  <div class="cell" data-x="7" data-y="38"></div>
+  <div class="cell" data-x="8" data-y="38"></div>
+  <div class="cell thick-r" data-x="9" data-y="38"></div>
+  <div class="cell" data-x="10" data-y="38"></div>
+  <div class="cell" data-x="11" data-y="38"></div>
+  <div class="cell" data-x="12" data-y="38"></div>
+  <div class="cell" data-x="13" data-y="38"></div>
+  <div class="cell thick-r" data-x="14" data-y="38"></div>
+  <div class="cell" data-x="15" data-y="38"></div>
+  <div class="cell" data-x="16" data-y="38"></div>
+  <div class="cell" data-x="17" data-y="38"></div>
+  <div class="cell" data-x="18" data-y="38"></div>
+  <div class="cell thick-r" data-x="19" data-y="38"></div>
+  <div class="cell" data-x="20" data-y="38"></div>
+  <div class="cell" data-x="21" data-y="38"></div>
+  <div class="cell" data-x="22" data-y="38"></div>
+  <div class="cell" data-x="23" data-y="38"></div>
+  <div class="cell thick-r" data-x="24" data-y="38"></div>
+  <div class="cell" data-x="25" data-y="38"></div>
+  <div class="cell" data-x="26" data-y="38"></div>
+  <div class="cell" data-x="27" data-y="38"></div>
+  <div class="cell" data-x="28" data-y="38"></div>
+  <div class="cell thick-r" data-x="29" data-y="38"></div>
+  <div class="cell" data-x="30" data-y="38"></div>
+  <div class="cell" data-x="31" data-y="38"></div>
+  <div class="cell" data-x="32" data-y="38"></div>
+  <div class="cell" data-x="33" data-y="38"></div>
+  <div class="cell thick-r" data-x="34" data-y="38"></div>
+  <div class="cell" data-x="35" data-y="38"></div>
+  <div class="cell" data-x="36" data-y="38"></div>
+  <div class="cell" data-x="37" data-y="38"></div>
+  <div class="cell" data-x="38" data-y="38"></div>
+  <div class="cell" data-x="39" data-y="38"></div>
+  <div class="hint row" id="hhint-39"><span class="hint-span">4</span><span class="hint-span">1</span><span
+      class="hint-span">10</span><span class="hint-span">1</span><span class="hint-span">4</span></div>
+  <div class="cell" data-x="0" data-y="39"></div>
+  <div class="cell" data-x="1" data-y="39"></div>
+  <div class="cell" data-x="2" data-y="39"></div>
+  <div class="cell" data-x="3" data-y="39"></div>
+  <div class="cell thick-r" data-x="4" data-y="39"><span class="cell-coord">5,40</span></div>
+  <div class="cell" data-x="5" data-y="39"></div>
+  <div class="cell" data-x="6" data-y="39"></div>
+  <div class="cell" data-x="7" data-y="39"></div>
+  <div class="cell" data-x="8" data-y="39"></div>
+  <div class="cell thick-r" data-x="9" data-y="39"><span class="cell-coord">10,40</span></div>
+  <div class="cell" data-x="10" data-y="39"></div>
+  <div class="cell" data-x="11" data-y="39"></div>
+  <div class="cell" data-x="12" data-y="39"></div>
+  <div class="cell" data-x="13" data-y="39"></div>
+  <div class="cell thick-r" data-x="14" data-y="39"><span class="cell-coord">15,40</span></div>
+  <div class="cell" data-x="15" data-y="39"></div>
+  <div class="cell" data-x="16" data-y="39"></div>
+  <div class="cell" data-x="17" data-y="39"></div>
+  <div class="cell" data-x="18" data-y="39"></div>
+  <div class="cell thick-r" data-x="19" data-y="39"><span class="cell-coord">20,40</span></div>
+  <div class="cell" data-x="20" data-y="39"></div>
+  <div class="cell" data-x="21" data-y="39"></div>
+  <div class="cell" data-x="22" data-y="39"></div>
+  <div class="cell" data-x="23" data-y="39"></div>
+  <div class="cell thick-r" data-x="24" data-y="39"><span class="cell-coord">25,40</span></div>
+  <div class="cell" data-x="25" data-y="39"></div>
+  <div class="cell" data-x="26" data-y="39"></div>
+  <div class="cell" data-x="27" data-y="39"></div>
+  <div class="cell" data-x="28" data-y="39"></div>
+  <div class="cell thick-r" data-x="29" data-y="39"><span class="cell-coord">30,40</span></div>
+  <div class="cell" data-x="30" data-y="39"></div>
+  <div class="cell" data-x="31" data-y="39"></div>
+  <div class="cell" data-x="32" data-y="39"></div>
+  <div class="cell" data-x="33" data-y="39"></div>
+  <div class="cell thick-r" data-x="34" data-y="39"><span class="cell-coord">35,40</span></div>
+  <div class="cell" data-x="35" data-y="39"></div>
+  <div class="cell" data-x="36" data-y="39"></div>
+  <div class="cell" data-x="37" data-y="39"></div>
+  <div class="cell" data-x="38" data-y="39"></div>
+  <div class="cell" data-x="39" data-y="39"><span class="cell-coord">40,40</span></div>
+</div>
