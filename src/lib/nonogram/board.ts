@@ -89,7 +89,7 @@ export interface BoardOptions {
 	 * 처음 판과 처음부터에서는 [0] 줄을 모두 X 로 둔다. 사이트 기본 동작.
 	 */
 	autoCross: boolean;
-	/** 되돌리기 최대 개수 */
+	/** 되돌리기 최대 개수 (기록 개수 — 솔버 실행 하나는 기록 하나다) */
 	historyLimit: number;
 }
 
@@ -98,6 +98,8 @@ export interface WriteOptions {
 	/**
 	 * 되돌리기 묶음 이름. 맨 위 기록이 같은 이름이면 거기에 덧붙인다 —
 	 * 솔버 실행 하나를 되돌리기 한 번으로 돌리는 데 쓴다. 없으면 호출마다 새 기록.
+	 * 묶음 안에서 같은 칸을 여러 번 바꾸면 "처음 값 → 마지막 값" 하나로 합친다 — 끝없이 도는 솔버(유전 알고리즘이
+	 * 세대마다 후보를 다시 그린다)도 기록이 칸 수 이상 커지지 않는다.
 	 */
 	readonly historyTag?: string;
 	/** false 면 기록하지 않는다 */
@@ -107,9 +109,11 @@ export interface WriteOptions {
 interface HistoryEntry {
 	readonly tag: string | undefined;
 	readonly changes: Change[];
+	/** 묶음 기록만: 칸 → changes 안의 위치 (같은 칸의 변경을 하나로 합친다) */
+	readonly slots?: Map<number, number>;
 }
 
-const DEFAULT_OPTIONS: BoardOptions = { autoCross: true, historyLimit: 200 };
+const DEFAULT_OPTIONS: BoardOptions = { autoCross: true, historyLimit: 1000 };
 
 export class Board implements BoardReader {
 	readonly puzzle: Puzzle;
@@ -277,6 +281,7 @@ export class Board implements BoardReader {
 		const changes: Change[] = [];
 		for (let i = entry.changes.length - 1; i >= 0; i--) {
 			const c = entry.changes[i];
+			if (c.from === c.to) continue; // 묶음 안에서 바뀌었다 돌아온 칸
 			this.#store.set(c.index, c.from);
 			changes.push({ index: c.index, from: c.to, to: c.from });
 		}
@@ -288,10 +293,11 @@ export class Board implements BoardReader {
 	redo(source: ChangeSource = 'user'): Change[] {
 		const entry = this.#redo.pop();
 		if (!entry) return [];
-		for (const c of entry.changes) this.#store.set(c.index, c.to);
+		const changes = entry.changes.filter((c) => c.from !== c.to);
+		for (const c of changes) this.#store.set(c.index, c.to);
 		this.#undo.push(entry);
-		this.#emit('redo', entry.changes, source);
-		return entry.changes;
+		this.#emit('redo', changes, source);
+		return changes;
 	}
 
 	// ── 내부 ──────────────────────────────────────────────
@@ -335,16 +341,39 @@ export class Board implements BoardReader {
 	#commit(kind: BoardEventKind, changes: Change[], opts: WriteOptions): void {
 		if (changes.length === 0) return;
 		if (opts.record !== false) {
+			const tag = opts.historyTag;
 			const top = this.#undo.at(-1);
-			if (opts.historyTag !== undefined && top?.tag === opts.historyTag) {
-				top.changes.push(...changes);
+			if (tag !== undefined && top?.tag === tag) {
+				this.#mergeInto(top, changes);
+			} else if (tag !== undefined) {
+				const entry: HistoryEntry = { tag, changes: [], slots: new Map() };
+				this.#mergeInto(entry, changes);
+				this.#pushUndo(entry);
 			} else {
-				this.#undo.push({ tag: opts.historyTag, changes: [...changes] });
-				if (this.#undo.length > this.options.historyLimit) this.#undo.shift();
+				this.#pushUndo({ tag, changes: [...changes] });
 			}
 			this.#redo = [];
 		}
 		this.#emit(kind, changes, opts.source ?? 'user');
+	}
+
+	#pushUndo(entry: HistoryEntry): void {
+		this.#undo.push(entry);
+		if (this.#undo.length > this.options.historyLimit) this.#undo.shift();
+	}
+
+	/** 묶음 기록에 덧붙인다 — 이미 있는 칸이면 처음 from 은 두고 to 만 바꾼다 */
+	#mergeInto(entry: HistoryEntry, changes: readonly Change[]): void {
+		const slots = entry.slots!;
+		for (const c of changes) {
+			const at = slots.get(c.index);
+			if (at === undefined) {
+				slots.set(c.index, entry.changes.length);
+				entry.changes.push(c);
+			} else {
+				entry.changes[at] = { index: c.index, from: entry.changes[at].from, to: c.to };
+			}
+		}
 	}
 
 	#emit(kind: BoardEventKind, changes: readonly Change[], source: ChangeSource): void {

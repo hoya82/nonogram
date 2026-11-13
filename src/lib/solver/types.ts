@@ -39,7 +39,12 @@ export type SolverStep =
 	/** 메모(가정)를 모두 확정한다 */
 	| { readonly kind: 'memo-commit'; readonly note?: string }
 	/** 판은 그대로, 기록만 */
-	| { readonly kind: 'note'; readonly note: string };
+	| { readonly kind: 'note'; readonly note: string }
+	/**
+	 * 판은 그대로, 실행기에 일시정지를 청한다 — 화면에서 결과(예: 찾은 해)를 보여 주고 기다릴 때.
+	 * 계속하면 다음 단계부터 이어 간다. headless 실행기는 무시한다
+	 */
+	| { readonly kind: 'pause'; readonly note?: string };
 
 export type SolverStepKind = SolverStep['kind'];
 

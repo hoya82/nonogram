@@ -278,6 +278,11 @@ export class SolverRunner {
 				break;
 			}
 			for (const c of this.#apply(r.value)) if (flashed.size < FLASH_LIMIT) flashed.add(c.index);
+			// 전략이 멈춰 달라고 했다 — 이번 박자의 남은 몫도 버린다
+			if (r.value.kind === 'pause') {
+				this.pause();
+				break;
+			}
 			if (budget.ms !== undefined && performance.now() - t0 >= budget.ms) break;
 		}
 		if (flashed.size) this.flash = { seq: ++this.#flashSeq, cells: [...flashed] };

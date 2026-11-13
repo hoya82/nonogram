@@ -12,10 +12,11 @@ export function applyStep(board: Board, step: SolverStep, opts: WriteOptions): C
 			return board.commitMemo(opts);
 		case 'inspect':
 		case 'note':
+		case 'pause':
 			return [];
 	}
 }
 
 /** 판을 바꾸지 않는 단계인가 */
 export const isIdleStep = (step: SolverStep): boolean =>
-	step.kind === 'inspect' || step.kind === 'note';
+	step.kind === 'inspect' || step.kind === 'note' || step.kind === 'pause';

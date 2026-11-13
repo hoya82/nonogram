@@ -18,6 +18,8 @@ import {
 } from '../nonogram/line.js';
 import type { Puzzle } from '../nonogram/puzzle.js';
 import {
+	createBacktracking,
+	createGenetic,
 	cross,
 	fill,
 	findStrategy,
@@ -26,6 +28,7 @@ import {
 	memoCommit,
 	note,
 	paint,
+	pause,
 	runHeadless,
 	STRATEGIES,
 	type StepSource,
@@ -150,8 +153,12 @@ export class Session {
 			runner: this.runner,
 			puzzle: this.puzzle,
 			strategies: STRATEGIES,
+			/** 옵션을 바꾼 유전 알고리즘 — nono.run(nono.genetic({ seed: 7, polish: 0 })) */
+			genetic: createGenetic,
+			/** 옵션을 바꾼 완전 탐색 — nono.run(nono.backtracking({ maxSolutions: 10 })) */
+			backtracking: createBacktracking,
 			Cell,
-			steps: { paint, fill, cross, inspect, note, memoClear, memoCommit },
+			steps: { paint, fill, cross, inspect, note, pause, memoClear, memoCommit },
 			row: rowRef,
 			col: colRef,
 			lines: { analyzeLine, solveLine, overlapLine, settledClues },

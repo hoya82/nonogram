@@ -180,7 +180,9 @@ nono.run(function* ({ board }) {   // 즉석 전략
   for (let x = 0; x < board.width; x++)
     yield nono.steps.fill({ x, y: 0 })
 })
-nono.headless('line-propagation') // 화면 없이`}</pre>
+nono.headless('line-propagation') // 화면 없이
+nono.run(nono.genetic({ seed: 7, polish: 0 })) // GA 옵션
+nono.run(nono.backtracking({ maxSolutions: 10 })) // 해 10개까지 세기`}</pre>
 	</details>
 </aside>
 
@@ -390,7 +392,8 @@ nono.headless('line-propagation') // 화면 없이`}</pre>
 		color: var(--memo-color);
 	}
 	.log li.memo-clear .text,
-	.log li.memo-commit .text {
+	.log li.memo-commit .text,
+	.log li.pause .text {
 		color: var(--memo-color);
 		font-weight: 600;
 	}

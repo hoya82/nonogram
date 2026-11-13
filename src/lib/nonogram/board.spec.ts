@@ -42,6 +42,45 @@ describe('Board', () => {
 		expect(b.get(1, 1)).toBe(Cell.Filled);
 	});
 
+	it('되돌리기 묶음 — 같은 칸을 여러 번 바꾸면 처음 값 → 마지막 값 하나로 합친다', () => {
+		const b = new Board(P, undefined, { autoCross: false });
+		const values = [Cell.MemoFilled, Cell.MemoCrossed] as const;
+		// 유전 알고리즘처럼 같은 칸들을 끝없이 다시 그린다
+		for (let i = 0; i < 1000; i++) {
+			b.paint(
+				[
+					{ x: 0, y: 1, value: values[i % 2] },
+					{ x: 1, y: 1, value: values[(i + 1) % 2] }
+				],
+				{ historyTag: 'run' }
+			);
+		}
+		b.set(2, 1, Cell.Filled, { historyTag: 'run' });
+		b.set(2, 1, Cell.Unknown, { historyTag: 'run' }); // 바뀌었다 돌아온 칸
+		const undone = b.undo();
+		// 실제로 바뀐 두 칸만, 실행 전 값으로
+		expect(undone.map((c) => [c.index, c.to]).sort()).toEqual([
+			[3, Cell.Unknown],
+			[4, Cell.Unknown]
+		]);
+		expect(b.line({ axis: 'row', index: 1 })).toEqual([0, 0, 0]);
+		const redone = b.redo();
+		expect(redone).toHaveLength(2);
+		expect(b.line({ axis: 'row', index: 1 })).toEqual([Cell.MemoCrossed, Cell.MemoFilled, 0]);
+	});
+
+	it('되돌리기는 기본 1000개까지', () => {
+		const b = new Board(P, undefined, { autoCross: false });
+		expect(b.options.historyLimit).toBe(1000);
+		for (let i = 0; i < 1005; i++) b.set(0, 1, i % 2 ? Cell.Filled : Cell.Crossed);
+		let n = 0;
+		while (b.canUndo) {
+			b.undo();
+			n++;
+		}
+		expect(n).toBe(1000);
+	});
+
 	it('메모 확정·지우기', () => {
 		const b = new Board(P);
 		b.paint([

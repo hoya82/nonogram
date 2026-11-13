@@ -39,6 +39,8 @@ export const cross = (at: Point, note?: string): SolverStep =>
 export const memoClear = (note?: string): SolverStep => ({ kind: 'memo-clear', note });
 export const memoCommit = (note?: string): SolverStep => ({ kind: 'memo-commit', note });
 export const note = (text: string): SolverStep => ({ kind: 'note', note: text });
+/** 실행기에 일시정지를 청한다 (headless 는 무시) */
+export const pause = (note?: string): SolverStep => ({ kind: 'pause', note });
 
 /** 줄 풀이 결과 → 칸 쓰기. memo 면 메모 값으로 */
 export function deductionsToWrites(

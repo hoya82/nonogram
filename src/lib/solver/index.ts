@@ -5,6 +5,8 @@
 import { overlapSweep } from './strategies/overlap.js';
 import { linePropagation, overlapThenPropagation } from './strategies/line-propagation.js';
 import { probing } from './strategies/probing.js';
+import { createGenetic, genetic } from './strategies/genetic.js';
+import { backtracking, createBacktracking } from './strategies/backtracking.js';
 import type { Strategy } from './types.js';
 
 export * from './types.js';
@@ -26,11 +28,44 @@ export const STRATEGIES: readonly Strategy[] = [
 	overlapSweep,
 	linePropagation,
 	overlapThenPropagation,
-	probing
+	probing,
+	genetic,
+	backtracking
 ];
 
 export function findStrategy(id: string): Strategy | undefined {
 	return STRATEGIES.find((s) => s.id === id);
 }
 
-export { overlapSweep, linePropagation, overlapThenPropagation, probing };
+export {
+	overlapSweep,
+	linePropagation,
+	overlapThenPropagation,
+	probing,
+	genetic,
+	createGenetic,
+	backtracking,
+	createBacktracking
+};
+export type { GeneticStrategyOptions } from './strategies/genetic.js';
+export type { BacktrackingStrategyOptions } from './strategies/backtracking.js';
+export {
+	GeneticSearch,
+	buildModel,
+	countPlacements,
+	lineDistance,
+	DEFAULT_GENETIC_OPTIONS,
+	type GeneticOptions,
+	type GeneticModel,
+	type GenerationReport
+} from './genetic.js';
+export {
+	BacktrackSearch,
+	GridPropagator,
+	LineBuffers,
+	countSolutions,
+	DEFAULT_BACKTRACK_OPTIONS,
+	type BacktrackOptions,
+	type SearchEvent,
+	type SearchSummary
+} from './backtrack.js';
